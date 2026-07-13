@@ -396,6 +396,30 @@
         </div>
     </section>
 
+    <!-- Interactive Popup Rush Game Section -->
+    <section id="game-section" class="py-16 bg-gradient-to-r from-sky-50 to-indigo-50 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-gmarket text-2xl md:text-3xl text-gray-800 mb-2">🎮 성수 팝업 RUSH!</h2>
+            <p class="text-indigo-500 font-bold uppercase tracking-wider text-[11px] mb-8">60초 안에 10곳 정복하기</p>
+            
+            <div id="game-container" class="bg-white rounded-3xl p-4 md:p-6 shadow-xl border border-white/50 inline-block relative">
+                <div class="flex justify-between mb-4 px-2">
+                    <div class="text-sm font-gmarket text-indigo-600">시간: <span id="timer">60</span>s</div>
+                    <div class="text-sm font-gmarket text-emerald-600">성공: <span id="score">0</span>/10</div>
+                </div>
+                <div id="game-grid" class="grid grid-cols-8 grid-rows-8 gap-1 bg-gray-100 p-2 rounded-xl">
+                    <!-- Game Grid JS Injection -->
+                </div>
+                <div id="game-over" class="hidden absolute inset-0 bg-indigo-900/80 rounded-3xl flex flex-col items-center justify-center text-white">
+                    <h3 class="font-gmarket text-2xl mb-4">게임 종료!</h3>
+                    <button onclick="startGame()" class="bg-white text-indigo-900 px-6 py-2 rounded-full font-bold">다시 시작</button>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-xs text-gray-500 font-medium">화살표 키(또는 클릭)로 🚶 캐릭터를 움직여 🎁을 모두 모으세요!</div>
+        </div>
+    </section>
+
     <!-- The 10 Popups Section -->
     <section id="popups" class="py-16 bg-white/50 relative">
         <div class="max-w-6xl mx-auto px-4">
@@ -989,275 +1013,79 @@
     </footer>
 
     <script>
-        // Start stats animation counters when loaded
-        window.onload = function() {
-            animateValue("stat-hours", 1, 3, 1000, "h");
-            animateValue("stat-steps", 9000, 10434, 1500, "");
-            animateValue("stat-popups", 1, 10, 1200, "");
-        };
+        // Game Logic
+        const grid = document.getElementById('game-grid');
+        const timerEl = document.getElementById('timer');
+        const scoreEl = document.getElementById('score');
+        let playerPos = { x: 0, y: 0 };
+        let popupsCollected = 0;
+        let timeLeft = 60;
+        let gameActive = false;
 
-        // Custom Value Counter Animation
-        function animateValue(id, start, end, duration, suffix) {
-            let obj = document.getElementById(id);
-            if (!obj) return;
-            let range = end - start;
-            let current = start;
-            let increment = end > start ? 1 : -1;
-            let stepTime = Math.abs(Math.floor(duration / range));
-            if(stepTime < 1) stepTime = 1;
+        function createGrid() {
+            grid.innerHTML = '';
+            for(let i=0; i<64; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'w-8 h-8 md:w-10 md:h-10 bg-white rounded-md flex items-center justify-center';
+                cell.id = `cell-${i%8}-${Math.floor(i/8)}`;
+                grid.appendChild(cell);
+            }
+            renderPlayer();
+            spawnPopups();
+        }
+
+        function renderPlayer() {
+            const cell = document.getElementById(`cell-${playerPos.x}-${playerPos.y}`);
+            cell.innerHTML = '🚶';
+        }
+
+        function spawnPopups() {
+            for(let i=0; i<10; i++) {
+                let rx = Math.floor(Math.random()*8);
+                let ry = Math.floor(Math.random()*8);
+                document.getElementById(`cell-${rx}-${ry}`).innerHTML = '🎁';
+            }
+        }
+
+        function startGame() {
+            timeLeft = 60;
+            popupsCollected = 0;
+            playerPos = { x: 0, y: 0 };
+            gameActive = true;
+            document.getElementById('game-over').classList.add('hidden');
+            createGrid();
             
-            let timer = setInterval(function() {
-                if (suffix === "") {
-                    current += Math.ceil(range / (duration / 16));
-                    if (current >= end) {
-                        current = end;
-                        clearInterval(timer);
-                    }
-                    obj.textContent = current.toLocaleString();
-                } else {
-                    current += increment;
-                    if (current == end) {
-                        clearInterval(timer);
-                    }
-                    obj.textContent = current + suffix;
+            const timer = setInterval(() => {
+                timeLeft--;
+                timerEl.textContent = timeLeft;
+                if(timeLeft <= 0 || popupsCollected === 10) {
+                    clearInterval(timer);
+                    gameActive = false;
+                    document.getElementById('game-over').classList.remove('hidden');
                 }
-            }, 16);
+            }, 1000);
         }
 
-        // Interactive Blanket Slide Controller
-        let clickedCount = 0;
-        function kickTheBlanket() {
-            clickedCount++;
-            let dreadBar = document.getElementById('dread-bar');
-            let dreadPercentage = document.getElementById('dread-percentage');
-            let desireBar = document.getElementById('desire-bar');
-            let desirePercentage = document.getElementById('desire-percentage');
-            
-            let currentDread = 90 - (clickedCount * 25);
-            let currentDesire = 35 + (clickedCount * 20);
+        window.addEventListener('keydown', (e) => {
+            if(!gameActive) return;
+            const prevCell = document.getElementById(`cell-${playerPos.x}-${playerPos.y}`);
+            prevCell.innerHTML = '';
 
-            if (currentDread < 0) currentDread = 0;
-            if (currentDesire > 100) currentDesire = 100;
+            if(e.key === 'ArrowUp' && playerPos.y > 0) playerPos.y--;
+            if(e.key === 'ArrowDown' && playerPos.y < 7) playerPos.y++;
+            if(e.key === 'ArrowLeft' && playerPos.x > 0) playerPos.x--;
+            if(e.key === 'ArrowRight' && playerPos.x < 7) playerPos.x++;
 
-            dreadBar.style.width = currentDread + '%';
-            dreadPercentage.textContent = currentDread + '%';
-            desireBar.style.width = currentDesire + '%';
-            desirePercentage.textContent = currentDesire + '%';
-
-            if (currentDread <= 0 && currentDesire >= 100) {
-                showToast("이불 탈출 대성공! 당장 노트북을 챙겨 수리산역에서 DDP 환승 성수행 열차에 오르자! 🏃");
-            } else {
-                showToast("의지가 꿈틀거리는 게 느껴진다! 한 번 더 걷어차 무기력을 이겨보자!");
+            const newCell = document.getElementById(`cell-${playerPos.x}-${playerPos.y}`);
+            if(newCell.innerHTML === '🎁') {
+                popupsCollected++;
+                scoreEl.textContent = popupsCollected;
             }
-        }
+            renderPlayer();
+        });
 
-        // Show Custom Toast Notification
-        function showToast(message) {
-            let toast = document.getElementById('custom-toast');
-            let toastMsg = document.getElementById('toast-message');
-            toastMsg.textContent = message;
-            
-            toast.classList.remove('translate-y-24', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-            
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-24', 'opacity-0');
-            }, 4000);
-        }
-
-        // Filter 10 Popups Grid based on Tab Themes
-        function filterTheme(theme) {
-            let cards = document.querySelectorAll('.popup-card');
-            let buttons = document.querySelectorAll('.theme-btn');
-            
-            // Toggle Active classes on buttons
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-sky-400', 'text-white', 'shadow-sm');
-                btn.classList.add('bg-gray-100', 'text-gray-600');
-            });
-
-            document.getElementById(`btn-theme-${theme}`).classList.add('bg-sky-400', 'text-white', 'shadow-sm');
-            document.getElementById(`btn-theme-${theme}`).classList.remove('bg-gray-100', 'text-gray-600');
-
-            cards.forEach(card => {
-                if (theme === 'all') {
-                    card.style.display = 'flex';
-                } else {
-                    if (card.getAttribute('data-theme') === theme) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }
-            });
-        }
-
-        // Olive Young Gallery Interaction Code
-        let currentOYIndex = 1;
-        const totalOYSlides = 7;
-        const captions = [
-            "1/7 단계: 성수동 올영 지도 서칭 (10018.jpg)",
-            "2/7 단계: 대세인 올영 스토어 입구 탐방 (10022.jpg)",
-            "3/7 단계: NFC 태깅으로 현장 체크인 (10020.jpg)",
-            "4/7 단계: 최종 랠리 보상 수령 (10031.jpg)",
-            "5/7 단계: 뷰티 맨션 미션 대시보드 (10023.jpg)",
-            "6/7 단계: 지정 올영 매장 연방점 탐색 (10026.jpg)",
-            "7/7 단계: 최종 체크인 완료 화면 (10028.jpg)"
-        ];
-
-        function showOYSlide(index) {
-            let slides = document.querySelectorAll('.oy-slide');
-            let dotBtns = document.querySelectorAll('.oy-dot-btn');
-            
-            slides.forEach(slide => {
-                slide.classList.remove('opacity-100');
-                slide.classList.add('opacity-0');
-            });
-
-            dotBtns.forEach(btn => {
-                btn.classList.remove('bg-lime-200', 'text-lime-800', 'font-bold');
-                btn.classList.add('bg-gray-100', 'text-gray-400');
-            });
-
-            let slideId = index;
-            document.getElementById(`oy-slide-${slideId}`).classList.remove('opacity-0');
-            document.getElementById(`oy-slide-${slideId}`).classList.add('opacity-100');
-            
-            let btnIndex = index === 1 ? 0 : index === 2 ? 1 : index === 3 ? 2 : index === 4 ? 6 : index === 5 ? 3 : index === 6 ? 4 : 5;
-            dotBtns[btnIndex].classList.add('bg-lime-200', 'text-lime-800', 'font-bold');
-            dotBtns[btnIndex].classList.remove('bg-gray-100', 'text-gray-400');
-
-            document.getElementById('oy-slide-caption').textContent = captions[index - 1];
-        }
-
-        function nextOYSlide() {
-            currentOYIndex++;
-            if (currentOYIndex > totalOYSlides) {
-                currentOYIndex = 1;
-            }
-            showOYSlide(currentOYIndex);
-        }
-
-        function prevOYSlide() {
-            currentOYIndex--;
-            if (currentOYIndex < 1) {
-                currentOYIndex = totalOYSlides;
-            }
-            showOYSlide(currentOYIndex);
-        }
-
-        function setOYSlide(num) {
-            currentOYIndex = num;
-            showOYSlide(num);
-        }
-
-        // Loot Bag Unboxing Click Interaction
-        const lootDetails = {
-            nh_clover: {
-                title: "☘️ NH클로버 키캡 키링 (농협 드림뱅크 전리품)",
-                desc: "모임 통장을 그 자리에서 즉시 개설하고 게이지를 두드리는 협동 미션을 완료했다. 마친 후 내 손으로 소중히 조합해 완성한 네잎클로버 키캡 키링이다. 기계식 스위치에 꽂고 가볍게 타건해 보니 짤각짤각하는 맑은 타건음이 아주 일품이다.",
-                color: "text-emerald-700"
-            },
-            ramen_selfie: {
-                title: "🍜 내 사진 DIY 컵라면 (신라면분식 더 팩토리)",
-                desc: "성수동 농심 분식 팩토리 체험관에서 즉각 셀피 촬영 기기로 사진을 남겼다. 내 얼굴을 컵라면 전면 프레임에 스티커로 정성스럽게 밀착 인쇄해 보존했다. 떼샷 주머니(10035_2.jpg) 하단 왼쪽에 보면 제 셀카가 인쇄된 귀여운 빨간 컵라면을 그대로 발견할 수 있다.",
-                color: "text-red-700"
-            },
-            romand_tints: {
-                title: "💄 롬앤 공병 수거 틴트 & 실버 틴트링 (롬앤 핑크오피스)",
-                desc: "핑크 오피스 팝업 한정 틴트 용기 수거함에 다 쓴 공병을 알차게 교환 기부해 무료로 증정받은 시그니처 틴트다. 그리고 사려던 정가 10,900원의 신상 틴트를 구매함으로써 기준 금액(만 원 이상)이 똑똑하게 완비되어 귀여운 한정판 실버 틴트링까지 알뜰하게 얻었다.",
-                color: "text-pink-700"
-            },
-            oy_pack: {
-                title: "🟢 올영 수분 팩 6매입 (올리브영 뷰티 맨션 스탬프 랠리)",
-                desc: "성수동 일대를 고루 걸어 다니며 4곳의 올리브영 매장에 완벽하게 NFC 체크인을 완성하고, 정가 보상 리워드로 획득한 올리브영 정품 ‘NAD-PRIZCELL 글로우 필름 마스크 5+1입 기획 박스’다. 주말 1만 보 여정에 영광스러운 보상으로 투명백 내부에 위풍당당하게 꽉 차 있는 전리품의 영롱한 실물!",
-                color: "text-lime-750"
-            },
-            sn_strawberry: {
-                title: "🍫 스니커즈 딸기 맛 바 (스니커즈 트럭 무빙 팝업)",
-                desc: "소셜 미션 완료 시 트럭 냉동 부스에서 즉각 꺼내어 증정한 청량하고 달콤한 스니커즈 아이스바다! 맥(MAC) 대기줄에 서서 아주 유용하게 해치우며 한낮 덥고 피곤한 대기 줄에서 최고의 비상 영양소 역할을 했다.",
-                color: "text-amber-700"
-            },
-            offbeauty_packs: {
-                title: "🧴 오프뷰티 수분 마스크팩 10장 무더기 (성수메가팩토리)",
-                desc: "갈증을 시원하게 제압해 주는 탄산 톡 쏘는 제로 얼박사 드링크와 더불어, 럭키드로우의 떨리는 뽑기 통 속에서 행운이 가득 깃들며 단숨에 무려 10장의 고농축 마스크팩 정품 묶음이 당첨되는 이변을 통 크게 맞닥뜨렸던 전리품이다!",
-                color: "text-purple-700"
-            }
-        };
-
-        function selectLoot(key, element) {
-            document.querySelectorAll('.loot-btn').forEach(btn => {
-                btn.classList.remove('active-loot', 'ring-2', 'ring-indigo-300');
-            });
-            
-            element.classList.add('active-loot', 'ring-2', 'ring-indigo-300');
-
-            const info = lootDetails[key];
-            const titleElement = document.getElementById('loot-title');
-            const descElement = document.getElementById('loot-desc');
-            const infoBox = document.getElementById('loot-info-box');
-
-            titleElement.textContent = info.title;
-            titleElement.className = `font-gmarket text-xs mb-1 ${info.color}`;
-            descElement.textContent = info.desc;
-
-            infoBox.classList.add('scale-95', 'opacity-80');
-            setTimeout(() => {
-                infoBox.classList.remove('scale-95', 'opacity-80');
-            }, 100);
-        }
-
-        // Quiz Calculation Logic
-        function calculateQuizScore() {
-            let checkboxes = document.querySelectorAll('.quiz-checkbox');
-            let score = 0;
-            checkboxes.forEach(cb => {
-                if (cb.checked) {
-                    score += parseInt(cb.value);
-                }
-            });
-
-            document.getElementById('score-display').textContent = score + "점";
-            let recText = "";
-
-            if (score === 0) {
-                recText = "축하한다! 언제든지 가볍게 밖으로 뛰어나갈 준비가 끝난 '알잘딱 행동력 100%'의 스마트 모험가다. 성수동 2호선에 타기만 하면 된다! 우리가 정리한 올영 랠리와 농협 클로버 키링 코스를 즉시 영리하게 밟아보자.";
-            } else if (score <= 50) {
-                recText = "주말에 가끔 이불에 밀착당하지만, 마음 한구석에는 늘 영리한 탈출을 바라는 '현실주의 실용 분석가'다. 왕복 3시간 지하철 안에서 밀린 작업을 처리하고 생산성을 챙겨보자. 성수에 발을 내딛는 4시 즈음에 기분 좋은 갓생 도파민이 솟구친다!";
-            } else {
-                recText = "위험! 침대와 완벽 결합된 '솜이불 요정' 상태다. 아침 일찍 일어나는 고단한 오픈런은 과감히 영구 취소해 버리자! 대신 주말 오후 4시, 덥고 목마른 여름 날씨에 딱 시원하게 채워줄 오프뷰티 얼박사 제로 음료와 롬앤 공병 리사이클, 그리고 타건 소리가 짱 좋은 클로버 키캡 득템을 실속 타겟 삼아 가볍게 1만 보를 순환하는 '오후 알잘딱 루트'를 적극 권장한다. 주말의 상쾌함이 180도 바뀐다!";
-            }
-
-            document.getElementById('recommendation-text').textContent = recText;
-            document.getElementById('quiz-block').classList.add('hidden');
-            document.getElementById('quiz-result').classList.remove('hidden');
-        }
-
-        // Reset Quiz Block State
-        function resetQuiz() {
-            let checkboxes = document.querySelectorAll('.quiz-checkbox');
-            checkboxes.forEach(cb => cb.checked = false);
-            
-            document.getElementById('quiz-block').classList.remove('hidden');
-            document.getElementById('quiz-result').classList.add('hidden');
-        }
-
-        // Fallback copy
-        function copySharingLink() {
-            const url = window.location.href;
-            const textarea = document.createElement('textarea');
-            textarea.value = url;
-            document.body.appendChild(textarea);
-            textarea.select();
-            try {
-                document.execCommand('copy');
-                showToast("스토리 공유 링크가 복사되었습니다! 침대 속 친구에게 유쾌한 탈출 에너지를 선물해 주세요. 🔗");
-            } catch (err) {
-                showToast("링크 복사에 실패했습니다. 브라우저 주소창 주소를 직접 공유해 보세요.");
-            }
-            document.body.removeChild(textarea);
-        }
+        // Initialize game
+        createGrid();
     </script>
 </body>
 </html>
