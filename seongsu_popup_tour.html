@@ -1014,32 +1014,59 @@
 <script>
         // 1. 게임 로직
         const grid = document.getElementById('game-grid');
-        let playerPos = {x:0, y:0};
+        let playerPos = {x: 0, y: 0};
+        // 팝업스토어 위치 데이터
+        const popupLocations = [{x: 2, y: 2}, {x: 5, y: 5}, {x: 7, y: 7}]; 
+
         function initGame() {
             grid.innerHTML = '';
-            for(let i=0; i<64; i++) {
+            for (let i = 0; i < 64; i++) {
+                const x = i % 8;
+                const y = Math.floor(i / 8);
                 const cell = document.createElement('div');
-                cell.className = 'w-8 h-8 bg-white';
-                cell.id = `cell-${i%8}-${Math.floor(i/8)}`;
+                // Tailwind CSS 클래스 유지
+                cell.className = 'w-8 h-8 border border-gray-200 flex items-center justify-center';
+                cell.id = `cell-${x}-${y}`;
+                
+                // 팝업스토어 위치에 아이콘 표시
+                if (popupLocations.some(p => p.x === x && p.y === y)) {
+                    cell.textContent = '🎁';
+                }
                 grid.appendChild(cell);
             }
             updatePlayer();
         }
+
         function updatePlayer() {
-            document.querySelectorAll('.cell-player').forEach(el => el.textContent = '');
+            // 플레이어 이동 전, 이전 위치 초기화
+            const cells = document.querySelectorAll('#game-grid div');
+            cells.forEach(el => {
+                const [cx, cy] = el.id.replace('cell-', '').split('-').map(Number);
+                const isPopup = popupLocations.some(p => p.x === cx && p.y === cy);
+                el.textContent = isPopup ? '🎁' : '';
+            });
+            
+            // 현재 위치에 플레이어 표시
             const target = document.getElementById(`cell-${playerPos.x}-${playerPos.y}`);
             target.textContent = '🚶';
-            target.classList.add('cell-player');
+
+            // 팝업 도착 시 퀴즈 트리거
+            if (popupLocations.some(p => p.x === playerPos.x && p.y === playerPos.y)) {
+                alert("팝업스토어에 도착했습니다! 준비된 퀴즈를 풀어보세요.");
+                // 여기서 퀴즈 모달을 열거나 특정 로직 호출 가능
+            }
         }
+
         window.addEventListener('keydown', (e) => {
             if(e.key.startsWith('Arrow')) {
-                if(e.key === 'ArrowUp' && playerPos.y > 0) playerPos.y--;
-                if(e.key === 'ArrowDown' && playerPos.y < 7) playerPos.y++;
-                if(e.key === 'ArrowLeft' && playerPos.x > 0) playerPos.x--;
-                if(e.key === 'ArrowRight' && playerPos.x < 7) playerPos.x++;
+                if (e.key === 'ArrowUp' && playerPos.y > 0) playerPos.y--;
+                if (e.key === 'ArrowDown' && playerPos.y < 7) playerPos.y++;
+                if (e.key === 'ArrowLeft' && playerPos.x > 0) playerPos.x--;
+                if (e.key === 'ArrowRight' && playerPos.x < 7) playerPos.x++;
                 updatePlayer();
             }
         });
+
         initGame();
 
         // 2. 설문 로직
