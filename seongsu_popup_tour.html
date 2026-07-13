@@ -789,7 +789,7 @@
                 <div class="w-12 h-1 bg-pink-200 mx-auto mt-4 rounded-full"></div>
                 <p class="text-gray-500 mt-4 text-xs md:text-sm">
                     왕복 3시간의 콤팩트한 스마트 투어가 선사한 아름다운 결과물! <br class="hidden sm:inline">
-                    최종 전리품 가방 실물 떼샷(`10035_2.jpg`)을 눌러 각 소품의 획득 내러티브를 즐겨보자.
+                    최종 전리품 가방 실물 떼샷(`10035.jpg`)을 눌러 각 소품의 획득 내러티브를 즐겨보자.
                 </p>
             </div>
 
@@ -799,7 +799,7 @@
                     <!-- Loot Bag Real Image -->
                     <div class="md:col-span-6">
                         <div class="relative rounded-2xl overflow-hidden border border-blue-100 shadow-md group">
-                            <img src="10035_2.jpg" alt="성수동 팝업 최종 전리품 가방 떼샷" class="w-full h-auto object-cover max-h-[500px]" onerror="this.src='https://placehold.co/600x600/fce7f3/735105?text=10035_2.jpg+(Loot+Bag)'">
+                            <img src="10035.jpg" alt="성수동 팝업 최종 전리품 가방 떼샷" class="w-full h-auto object-cover max-h-[500px]" onerror="this.src='https://placehold.co/600x600/fce7f3/735105?text=10035.jpg+(Loot+Bag)'">
                             <div class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-all duration-300"></div>
                             <div class="absolute bottom-3 left-3 bg-white/90 border border-blue-200 px-3 py-1.5 rounded-xl shadow-xs text-[11px] text-gray-700 font-bold flex items-center">
                                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
@@ -1011,81 +1011,46 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Game Logic
+<script>
+        // 1. 게임 로직
         const grid = document.getElementById('game-grid');
-        const timerEl = document.getElementById('timer');
-        const scoreEl = document.getElementById('score');
-        let playerPos = { x: 0, y: 0 };
-        let popupsCollected = 0;
-        let timeLeft = 60;
-        let gameActive = false;
-
-        function createGrid() {
+        let playerPos = {x:0, y:0};
+        function initGame() {
             grid.innerHTML = '';
             for(let i=0; i<64; i++) {
                 const cell = document.createElement('div');
-                cell.className = 'w-8 h-8 md:w-10 md:h-10 bg-white rounded-md flex items-center justify-center';
+                cell.className = 'w-8 h-8 bg-white';
                 cell.id = `cell-${i%8}-${Math.floor(i/8)}`;
                 grid.appendChild(cell);
             }
-            renderPlayer();
-            spawnPopups();
+            updatePlayer();
         }
-
-        function renderPlayer() {
-            const cell = document.getElementById(`cell-${playerPos.x}-${playerPos.y}`);
-            cell.innerHTML = '🚶';
+        function updatePlayer() {
+            document.querySelectorAll('.cell-player').forEach(el => el.textContent = '');
+            const target = document.getElementById(`cell-${playerPos.x}-${playerPos.y}`);
+            target.textContent = '🚶';
+            target.classList.add('cell-player');
         }
-
-        function spawnPopups() {
-            for(let i=0; i<10; i++) {
-                let rx = Math.floor(Math.random()*8);
-                let ry = Math.floor(Math.random()*8);
-                document.getElementById(`cell-${rx}-${ry}`).innerHTML = '🎁';
-            }
-        }
-
-        function startGame() {
-            timeLeft = 60;
-            popupsCollected = 0;
-            playerPos = { x: 0, y: 0 };
-            gameActive = true;
-            document.getElementById('game-over').classList.add('hidden');
-            createGrid();
-            
-            const timer = setInterval(() => {
-                timeLeft--;
-                timerEl.textContent = timeLeft;
-                if(timeLeft <= 0 || popupsCollected === 10) {
-                    clearInterval(timer);
-                    gameActive = false;
-                    document.getElementById('game-over').classList.remove('hidden');
-                }
-            }, 1000);
-        }
-
         window.addEventListener('keydown', (e) => {
-            if(!gameActive) return;
-            const prevCell = document.getElementById(`cell-${playerPos.x}-${playerPos.y}`);
-            prevCell.innerHTML = '';
-
-            if(e.key === 'ArrowUp' && playerPos.y > 0) playerPos.y--;
-            if(e.key === 'ArrowDown' && playerPos.y < 7) playerPos.y++;
-            if(e.key === 'ArrowLeft' && playerPos.x > 0) playerPos.x--;
-            if(e.key === 'ArrowRight' && playerPos.x < 7) playerPos.x++;
-
-            const newCell = document.getElementById(`cell-${playerPos.x}-${playerPos.y}`);
-            if(newCell.innerHTML === '🎁') {
-                popupsCollected++;
-                scoreEl.textContent = popupsCollected;
+            if(e.key.startsWith('Arrow')) {
+                if(e.key === 'ArrowUp' && playerPos.y > 0) playerPos.y--;
+                if(e.key === 'ArrowDown' && playerPos.y < 7) playerPos.y++;
+                if(e.key === 'ArrowLeft' && playerPos.x > 0) playerPos.x--;
+                if(e.key === 'ArrowRight' && playerPos.x < 7) playerPos.x++;
+                updatePlayer();
             }
-            renderPlayer();
         });
+        initGame();
 
-        // Initialize game
-        createGrid();
+        // 2. 설문 로직
+        function calculateQuizScore() {
+            let score = 0;
+            document.querySelectorAll('.quiz-checkbox:checked').forEach(c => score += parseInt(c.value));
+            const resultEl = document.getElementById('quiz-result');
+            document.getElementById('score-display').textContent = `당신의 눕방 점수: ${score}점`;
+            document.getElementById('recommendation-text').textContent = score >= 50 ? "지금 바로 성수로 떠나세요!" : "조금만 더 움직여볼까요?";
+            resultEl.classList.remove('hidden');
+        }
     </script>
 </body>
 </html>
