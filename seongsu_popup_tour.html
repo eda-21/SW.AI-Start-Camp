@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>왕복 3시간, 침대 밖 10,434걸음 | 성수동 팝업 정복기</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Web Fonts (Pretendard & Gmarket Sans) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <style>
+        @font-face {
+            font-family: 'GmarketSansBold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GmarketSansBold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: #E6F3FA; /* Soft Pastel Sky Blue Base */
+            color: #374151; /* Charcoal gray for excellent readability */
+            overflow-x: hidden;
+        }
+        .font-gmarket {
+            font-family: 'GmarketSansBold', sans-serif;
+        }
+        /* Custom Premium Soft Glows */
+        .pastel-glow-blue {
+            box-shadow: 0 12px 36px rgba(186, 230, 253, 0.45);
+        }
+        .pastel-glow-pink {
+            box-shadow: 0 12px 36px rgba(251, 207, 232, 0.45);
+        }
+        .pastel-bg {
+            background: linear-gradient(135deg, #e0f2fe 0%, #fdf4ff 35%, #fef3c7 70%, #ecfdf5 100%);
+            background-size: 200% 200%;
+            animation: softGradient 12s ease infinite;
+        }
+        @keyframes softGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #E6F3FA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B3D7EB;
+            border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8FC4E0;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        skyPastel: '#E0F2FE',       // Soft airy blue
+                        peachPastel: '#FFEDD5',     // Soft peach cream
+                        pinkPastel: '#FCE7F3',      // Sweet baby pink
+                        mintPastel: '#D1FAE5',      // Mint meringue
+                        lavenderPastel: '#F3E8FF',  // Sweet lavender
+                        brandNH: '#EBFDF4',         // NH Mint Green (Fresh)
+                        brandOY: '#F4FCE3',         // Olive Young signature soft lime base
+                        brandSN: '#FFF6E9',         // Snickers creamy caramel/orange
+                        brandSR: '#FFF0F0',         // Shinramyun soft pastel red
+                        brandMAC: '#F8FAFC',        // Modern glossy silver/gray
+                        brandISOI: '#ECFEFF',       // Fresh clear cyan
+                        brandCELL: '#F0F9FF',       // Cooling mineral blue
+                        brandROM: '#FFF1F2',        // Romantic cherry rose pink
+                        brandGREEN: '#FFFBEB',      // Green Tomato golden cream
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="pastel-bg min-h-screen flex flex-col justify-between selection:bg-sky-200 selection:text-sky-900">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-blue-100/40 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <span class="font-gmarket text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-400 to-pink-500">
+                    🎈 10,434 STEPS
+                </span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-xs font-semibold">
+                <a href="#prologue" class="text-gray-600 hover:text-blue-500 transition-colors">나의 딜레마</a>
+                <a href="#journey" class="text-gray-600 hover:text-blue-500 transition-colors">생산성 지하철</a>
+                <a href="#map-section" class="text-gray-600 hover:text-blue-500 transition-colors">알잘딱 동선지도</a>
+                <a href="#popups" class="text-gray-600 hover:text-blue-500 transition-colors">성수 팝업 10선</a>
+                <a href="#loot-unboxing" class="text-gray-600 hover:text-blue-500 transition-colors">🎒 전리품 가방</a>
+                <a href="#strengths" class="text-gray-600 hover:text-blue-500 transition-colors">인사이트 카드</a>
+                <a href="#interactive-cta" class="text-gray-600 hover:text-blue-500 transition-colors">눕방 지수 진단</a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <a href="#interactive-cta" class="px-5 py-2 text-xs font-gmarket bg-gradient-to-r from-blue-400 to-indigo-400 hover:from-blue-500 hover:to-indigo-500 text-white rounded-full transition-all hover:scale-105 duration-200 shadow-sm">
+                    이불 탈출하기
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0 pointer-events-none opacity-50">
+            <div class="absolute top-1/4 left-10 w-96 h-96 bg-skyPastel rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-10 w-80 h-80 bg-pinkPastel rounded-full blur-3xl"></div>
+            <div class="absolute top-1/3 right-1/3 w-80 h-80 bg-mintPastel rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <!-- Cozy Badge -->
+            <div class="inline-flex items-center space-x-2 bg-white/90 border border-blue-100/50 px-4 py-2 rounded-full mb-6 shadow-sm">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-pink-400"></span>
+                </span>
+                <span class="text-xs text-blue-600 font-bold tracking-wide">솜이불 밖으로 나간 현실주의자의 주말 일지</span>
+            </div>
+
+            <!-- Catchphrase Title -->
+            <h1 class="font-gmarket text-3xl md:text-5xl lg:text-6xl leading-tight md:leading-snug mb-8 text-gray-800">
+                왕복 <span class="text-blue-500 border-b-4 border-blue-200 pb-1">3시간</span>, 침대 밖 <span class="text-indigo-500 border-b-4 border-indigo-200 pb-1">10,434걸음</span>:<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-pink-400 to-orange-400">무기력함을 가뿐히 이겨낸</span><br class="hidden md:inline">
+                나의 힐링 성수동 팝업 정복기
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-gray-500 text-sm md:text-base mb-10 leading-relaxed font-medium">
+                남들 다 하는 새벽 오픈런 실패? 오히려 더 자유롭고 효율적이야!<br>
+                무기력했던 주말에 생기를 가득 불어넣고, 대기업의 영리한 마케팅 트렌드까지<br class="hidden md:inline">
+                알잘딱하게 쓸어 담아온 100% 날것의 리얼 경험담.
+            </p>
+
+            <!-- Stats Dashboard -->
+            <div class="grid grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto mb-12">
+                <div class="bg-white/95 border border-blue-100 rounded-2xl p-4 md:p-6 text-center transform transition-all hover:scale-105 duration-300 shadow-sm hover:border-blue-300">
+                    <div class="text-3xl md:text-4xl font-gmarket text-blue-500 mb-1" id="stat-hours">3h</div>
+                    <div class="text-[11px] text-gray-500 font-bold">왕복 이동 시간</div>
+                </div>
+                <div class="bg-white/95 border border-blue-100 rounded-2xl p-4 md:p-6 text-center transform transition-all hover:scale-105 duration-300 shadow-sm hover:border-indigo-300">
+                    <div class="text-3xl md:text-4xl font-gmarket text-indigo-500 mb-1" id="stat-steps">10,434</div>
+                    <div class="text-[11px] text-gray-500 font-bold">침대 밖 실제 걸음</div>
+                </div>
+                <div class="bg-white/95 border border-blue-100 rounded-2xl p-4 md:p-6 text-center transform transition-all hover:scale-105 duration-300 shadow-sm hover:border-pink-300">
+                    <div class="text-3xl md:text-4xl font-gmarket text-pink-500 mb-1" id="stat-popups">10</div>
+                    <div class="text-[11px] text-gray-500 font-bold">도전한 팝업 수</div>
+                </div>
+            </div>
+
+            <!-- Call to Action Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#prologue" class="px-8 py-4 bg-gradient-to-r from-blue-400 to-indigo-400 hover:from-blue-500 hover:to-indigo-500 text-white font-gmarket rounded-xl hover:opacity-95 transition-all hover:-translate-y-1 shadow-md w-full sm:w-auto">
+                    스토리 한눈에 읽기 <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+                <a href="#popups" class="px-8 py-4 bg-white hover:bg-gray-50 border border-blue-100 text-gray-600 hover:text-gray-800 font-gmarket rounded-xl transition-all hover:-translate-y-1 shadow-sm w-full sm:w-auto">
+                    실제 탐방 사진 & 10선 보기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prologue Section -->
+    <section id="prologue" class="py-16 border-t border-blue-100/40 bg-white/40 relative">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-gmarket text-2xl md:text-3xl text-gray-800 mb-2">
+                    1단계: 눕방러의 고뇌와 딜레마
+                </h2>
+                <p class="text-indigo-400 font-bold uppercase tracking-wider text-[11px]">The Bed-Lying Dilemma</p>
+                <div class="w-12 h-1 bg-indigo-200 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                <!-- Text Area -->
+                <div class="md:col-span-7 space-y-6">
+                    <span class="inline-flex px-3 py-1 bg-pink-100 text-pink-600 rounded-md text-xs font-bold">오픈런 실패? 오히려 편안해!</span>
+                    <h3 class="font-gmarket text-xl md:text-2xl text-gray-800 leading-relaxed">
+                        "오픈런 못 한 게 죄는 아니잖아!"<br>
+                        주말 늦잠러의 무기력 격파 스토리
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                        화창한 주말 아침, 인스타그램 스토리에는 아침 일찍부터 성수동 대기 명단에 이름을 적은 '부지런한 갓생러'들의 인증샷이 쏟아졌다. 침대 위에서 웅크린 채 그 모습을 보며 내적 죄책감은 커져만 갔다.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                        어느덧 시계는 <strong>오후 2시</strong>를 지났다. "이제 가도 선착순 대형 사은품은 다 끝났을 텐데..."라는 비관이 스멀스멀 피어났지만, 무기력하게 주말 하루를 유튜브 숏폼으로 날릴 수는 없었다. <span class="text-indigo-500 font-bold">"꼭 대형 본품 선물이 아니더라도, 소소한 체험을 즐기고 딱 1만 보만 걸으면서 환기하고 오자!"</span> 하고 이불을 호쾌하게 밀쳐냈다.
+                    </p>
+                    <div class="flex items-center space-x-4 pt-2">
+                        <div class="flex -space-x-2">
+                            <span class="w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-lg shadow-sm">🛏️</span>
+                            <span class="w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-lg shadow-sm">💤</span>
+                            <span class="w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-lg shadow-sm">📱</span>
+                        </div>
+                        <span class="text-xs text-gray-500">주말 동안 폰만 보던 내 무기력 상태</span>
+                    </div>
+                </div>
+
+                <!-- Visual Interactive Area -->
+                <div class="md:col-span-5">
+                    <div class="bg-white border border-blue-100 rounded-3xl p-6 relative overflow-hidden shadow-md">
+                        <!-- Tiny Mac Style Buttons -->
+                        <div class="absolute top-4 left-4 flex space-x-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-300"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-300"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-300"></span>
+                        </div>
+                        
+                        <div class="text-center py-4">
+                            <div class="text-[10px] text-gray-400 font-bold mb-1 uppercase tracking-widest">Sunday Afternoon</div>
+                            <div class="text-4xl md:text-5xl font-gmarket text-gray-800 mb-6" id="digital-clock">14:00</div>
+                            
+                            <!-- Interactive Blanket Progress -->
+                            <div class="space-y-4 text-left">
+                                <div class="bg-blue-50/50 rounded-xl p-4 border border-blue-100/40">
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span class="text-gray-500 font-semibold">이불 밀착도 (Dread)</span>
+                                        <span class="text-amber-500 font-bold" id="dread-percentage">90%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                                        <div class="bg-amber-400 h-full transition-all duration-500" id="dread-bar" style="width: 90%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-blue-50/50 rounded-xl p-4 border border-blue-100/40">
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span class="text-gray-500 font-semibold">기분 전환 갈망 (Desire)</span>
+                                        <span class="text-indigo-400 font-bold" id="desire-percentage">35%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                                        <div class="bg-indigo-400 h-full transition-all duration-500" id="desire-bar" style="width: 35%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Button -->
+                            <button onclick="kickTheBlanket()" class="mt-6 w-full py-4 bg-gradient-to-r from-blue-400 to-indigo-400 hover:from-blue-500 hover:to-indigo-500 text-white font-gmarket text-xs rounded-xl transition-all shadow-md hover:scale-[1.02]">
+                                🛌 이불 발로 뻥 차고 문 밖으로 나서기!
+                            </button>
+                            <p class="text-[10px] text-gray-400 mt-2">위 버튼을 클릭하여 무기력 지수를 깨부숴보자!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey / Subway Productivity Section -->
+    <section id="journey" class="py-16 bg-white/80 border-t border-b border-blue-100/40 relative">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-gmarket text-2xl md:text-3xl text-gray-800 mb-2">
+                    2단계: 수리산역에서 출발하는 반전의 1인 기획실
+                </h2>
+                <p class="text-emerald-500 font-bold uppercase tracking-wider text-[11px]">Subway Workation & Productivity</p>
+                <div class="w-12 h-1 bg-emerald-200 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="bg-skyPastel/30 border border-blue-100 rounded-3xl p-6 md:p-10 shadow-sm relative overflow-hidden">
+                <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-blue-100/50 rounded-full blur-3xl opacity-60"></div>
+                
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <!-- Subway Line View -->
+                    <div class="md:col-span-5 order-2 md:order-1">
+                        <div class="bg-white border border-blue-100/50 rounded-2xl p-6 relative">
+                            <h4 class="font-gmarket text-xs text-emerald-600 mb-4 flex items-center">
+                                <i class="fa-solid fa-subway mr-2"></i> 수도권 지하철 실시간 타임라인
+                            </h4>
+                            
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center bg-skyPastel/20 p-3 rounded-xl border border-blue-100/30">
+                                    <span class="text-xs text-gray-500 font-semibold">지하철 시간표 기준 소요</span>
+                                    <span class="text-xs text-emerald-600 font-bold">1시간 7분</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-pinkPastel/20 p-3 rounded-xl border border-pink-100/30">
+                                    <span class="text-xs text-gray-500 font-semibold">도어 투 도어 (Door to Door)</span>
+                                    <span class="text-xs text-indigo-600 font-bold">정확히 1시간 30분!</span>
+                                </div>
+                                <div class="border-l-2 border-dashed border-emerald-400 pl-4 py-2 space-y-4">
+                                    <div class="relative">
+                                        <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-blue-400"></div>
+                                        <div class="text-xs font-bold text-gray-800">14:30 신도림 출발</div>
+                                        <div class="text-[11px] text-gray-500">노트북 거치 완료. 주간 할 일 & 블로그 초안 기획 시작!</div>
+                                    </div>
+                                    <div class="relative">
+                                        <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-indigo-300"></div>
+                                        <div class="text-xs font-bold text-gray-700">15:00 홍대/합정 구간 통과</div>
+                                        <div class="text-[11px] text-gray-500">지하철이 한산해서 엄청난 집중 모드. 기획 검토 완료!</div>
+                                    </div>
+                                    <div class="relative">
+                                        <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+                                        <div class="text-xs font-bold text-emerald-600">16:00 성수역 안착</div>
+                                        <div class="text-[11px] text-gray-600 font-semibold">이동 중 60분 만에 주요 과제 전격 클리어! 갓생 완성!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description Text -->
+                    <div class="md:col-span-7 order-1 md:order-2 space-y-6">
+                        <span class="inline-flex px-3 py-1 bg-emerald-100 text-emerald-700 rounded-md text-xs font-bold">틈새 생산성의 미학</span>
+                        <h3 class="font-gmarket text-2xl md:text-3xl text-gray-800">
+                            "왕복 3시간 길바닥 시간 낭비?<br>
+                            나에겐 완벽한 지하철 1인 기획실!"
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                            수리산역에서 출발해 동대문역사문화공원역에서 2호선으로 환승하는 루트를 밟았다. 실제 지하철 순수 소요 시간표로는 1시간 7분 정도 걸리지만 이불 밖 출동부터 성수역 대합실 도착까지는 **정확히 도어 투 도어 1시간 30분**이 걸렸다. 
+                        </p>
+                        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                            길다면 참 긴 이동 시간이지만, 주말 오후 지하철 좌석에 앉아 맥북을 펴는 순간 훌륭한 나만의 작업실이 구축됐다. 밀려 있던 업무와 블로그 기획을 성수역에 내리기도 전에 야무지게 끝마쳤다. <span class="text-emerald-600 font-bold">목적지에 도착하기도 전에 이미 할 몫을 마친 상태라</span> 주말 늦잠에 대한 죄책감이 완벽하게 상쾌한 생산적 성취감으로 승화됐다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seongsu Optimized Map Section -->
+    <section id="map-section" class="py-16 bg-blue-50/50 border-b border-blue-100/40 relative">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-gmarket text-2xl md:text-3xl text-gray-800 mb-2">
+                    📍 오후 4시 성수 상륙, 알잘딱 동선 지도
+                </h2>
+                <p class="text-blue-500 font-bold uppercase tracking-wider text-[11px]">Optimized Seongsu Route Map</p>
+                <div class="w-12 h-1 bg-blue-200 mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-500 mt-4 text-xs md:text-sm">
+                    오후 늦게 출발했다고 무지성으로 돌 필요는 없다. <br class="hidden sm:inline">
+                    현지 실시간 상황에 맞춰 똑 부러지게 조율했던 10개 팝업의 최적화 루트 지도를 확인하자!
+                </p>
+            </div>
+
+            <div class="bg-white border border-blue-100 rounded-3xl p-6 md:p-8 shadow-sm">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Map Image View with Fallback -->
+                    <div class="md:col-span-7">
+                        <div class="relative rounded-2xl overflow-hidden border border-blue-150 shadow-md group">
+                            <img src="10070.jpg" alt="성수동 알잘딱 탐방 지도" class="w-full h-auto object-cover max-h-[550px]" onerror="this.src='https://placehold.co/600x800/e0f2fe/0369a1?text=10070.jpg+(Seongsu+Map+Overview)'">
+                            <div class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-all duration-300"></div>
+                            <div class="absolute bottom-3 left-3 bg-white/90 border border-blue-200 px-3 py-1.5 rounded-xl shadow-xs text-[11px] text-gray-700 font-bold flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-blue-500 mr-2 animate-ping"></span>
+                                실물 성수 팝업 이동 동선 캡처본
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Optimized Route Explanation List -->
+                    <div class="md:col-span-5 space-y-4">
+                        <h4 class="font-gmarket text-base text-gray-800 flex items-center">
+                            <i class="fa-solid fa-route text-indigo-500 mr-2"></i> 동선 기획자의 알잘딱 전략
+                        </h4>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-emerald-50/50 p-3 rounded-xl border border-emerald-100 flex items-start space-x-2.5">
+                                <span class="w-5 h-5 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center text-[10px] shrink-0 mt-0.5">1</span>
+                                <div class="text-xs">
+                                    <strong class="text-emerald-800 block mb-0.5">농협 ➡️ 스니커즈 무빙트럭 ➡️ 맥(MAC)</strong>
+                                    지도 검색으로 먼저 갔던 스니커즈는 없어서 과감히 일찍 포기하고 다른 곳을 돌다가, 맥(MAC)으로 이동하던 길에 우연히 발견해 똑부러지게 클리어함!
+                                </div>
+                            </div>
+
+                            <div class="bg-amber-50/50 p-3 rounded-xl border border-amber-100 flex items-start space-x-2.5">
+                                <span class="w-5 h-5 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center text-[10px] shrink-0 mt-0.5">2</span>
+                                <div class="text-xs">
+                                    <strong class="text-amber-800 block mb-0.5">성분에디터 대기폭발 대처법</strong>
+                                    그린토마토 마켓은 대기 431번에 예상 대기 361분이었음. 무조건 철수 판단을 내리고 아이소이, 신라면, 오프뷰티 등 실용적인 대안으로 빠른 루트 전환을 실행함.
+                                </div>
+                            </div>
+
+                            <div class="bg-indigo-50/50 p-3 rounded-xl border border-indigo-100 flex items-start space-x-2.5">
+                                <span class="w-5 h-5 rounded-full bg-indigo-500 text-white font-bold flex items-center justify-center text-[10px] shrink-0 mt-0.5">3</span>
+                                <div class="text-xs">
+                                    <strong class="text-indigo-800 block mb-0.5">올영 랠리 연동 피날레</strong>
+                                    마지막은 동선에 겹치도록 올리브영 성수 지점들을 징검다리처럼 엮어 스탬프 랠리를 완수하고 마스크팩 5+1 기획 정품 보상을 깔끔히 확보함.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-3 bg-gray-50 rounded-xl border border-gray-150 text-[11px] text-gray-500 leading-relaxed">
+                            <i class="fa-solid fa-circle-info mr-1"></i> 성수역을 중심으로 위 아래를 부드럽게 지그재그형 순환 구조로 이동하여 불필요한 보행 피로를 최소화시켰다.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The 10 Popups Section -->
+    <section id="popups" class="py-16 bg-white/50 relative">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-gmarket text-3xl text-gray-800 mb-2">
+                    3단계: 성수동 대세 팝업 10선 리포트
+                </h2>
+                <p class="text-blue-400 font-bold uppercase tracking-wider text-[11px]">Seongsu 10 Brand Popups & Real Photos</p>
+                <div class="w-12 h-1 bg-blue-200 mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-500 mt-6 max-w-xl mx-auto text-xs md:text-sm leading-relaxed">
+                    실제 탐방 현장에서 촬영한 생생한 사진들과 함께 정리했다. <br class="hidden sm:inline">
+                    대기업 마케터들이 설계한 오프라인 설계의 트렌드 인사이트와 내돈내산 영리한 경험담의 요약본.
+                </p>
+            </div>
+
+            <!-- Theme Filter Buttons (Pastel Pill-style Tabs) -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="filterTheme('all')" id="btn-theme-all" class="theme-btn px-6 py-2.5 rounded-full text-xs font-gmarket bg-sky-400 text-white shadow-sm transition-all">
+                    🌈 전체 동선 <span class="ml-1 px-2 py-0.5 text-[10px] bg-white/20 rounded-full">10</span>
+                </button>
+                <button onclick="filterTheme('refresh')" id="btn-theme-refresh" class="theme-btn px-6 py-2.5 rounded-full text-xs font-gmarket bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all">
+                    🎁 알잘딱 득템 & 체험 <span class="ml-1 px-2 py-0.5 text-[10px] bg-gray-200 text-gray-600 rounded-full">7</span>
+                </button>
+                <button onclick="filterTheme('trend')" id="btn-theme-trend" class="theme-btn px-6 py-2.5 rounded-full text-xs font-gmarket bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all">
+                    💡 실용 기획 & 트렌드 <span class="ml-1 px-2 py-0.5 text-[10px] bg-gray-200 text-gray-600 rounded-full">2</span>
+                </button>
+                <button onclick="filterTheme('reality')" id="btn-theme-reality" class="theme-btn px-6 py-2.5 rounded-full text-xs font-gmarket bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all">
+                    ⚠️ 판단의 쓴맛 <span class="ml-1 px-2 py-0.5 text-[10px] bg-gray-200 text-gray-600 rounded-full">1</span>
+                </button>
+            </div>
+
+            <!-- Popups Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="popups-grid">
+                
+                <!-- Popup 1: NH Dream Bank -->
+                <div class="popup-card bg-brandNH border border-emerald-200 rounded-3xl p-6 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg" data-theme="refresh">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded bg-emerald-100 text-emerald-700 border border-emerald-200/50">체험 & 발급 🎁</span>
+                            <span class="text-xs text-gray-500 font-semibold"><i class="fa-solid fa-map-marker-alt"></i> 연무장길 인근</span>
+                        </div>
+                        
+                        <!-- Combined Image Section for NH -->
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <div class="rounded-xl overflow-hidden border border-emerald-100 h-40">
+                                <img src="9852.jpg" alt="NH농협은행 인증" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x400/ebfdf4/1e6146?text=9852.jpg+(NH+Selfie)'">
+                            </div>
+                            <div class="rounded-xl overflow-hidden border border-emerald-100 h-40">
+                                <img src="9857.jpg" alt="NH농협은행 키캡" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x400/ebfdf4/1e6146?text=9857.jpg+(NH+Keycap)'">
+                            </div>
+                        </div>
+
+                        <h4 class="font-gmarket text-base text-emerald-800 mb-1">
+                            1. NH농협은행 드림뱅크 팝업스토어
+                        </h4>
+                        <p class="text-gray-600 text-xs md:text-sm mb-4 leading-relaxed">
+                            현장에서 팝업 전용 모임통장을 즉석 개설하며 참여를 개시했다. 커다란 버튼 두 개를 사정없이 내리치며 정해진 시간 내 게이지를 완벽히 채우는 협동 챌린지 미션에 가볍게 성공해 실용적인 노트를 확보했다. 통장 개설 덕에 이색적인 가상 아이디 카드도 발급받았다. 마지막 체험 완료 후, 조립해서 완성한 네잎클로버 키캡은 키보드에 끼워 보니 타이핑할 때마다 소리가 짤깍짤각 짱좋음!
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-emerald-200/60 mt-4 space-y-2">
+                        <div class="text-xs text-gray-600"><strong class="text-emerald-700"><i class="fa-solid fa-gift"></i> 실물 영수:</strong> 드림 백만 장자 노트, 네잎클로버 키캡 키링, 나만의 드림 ID 카드</div>
+                        <div class="text-xs text-gray-600"><strong class="text-indigo-600"><i class="fa-solid fa-lightbulb"></i> 알잘딱 기획 분석:</strong> 아날로그 타건감 and 챌린지 형식의 모바일 모임통장 개설을 유연하게 연결했다. 소소하지만 타겟의 타건 감성을 건드린 스마트한 마케팅이었다.</div>
+                    </div>
+                </div>
+
+                <!-- Popup 2: Snickers Moving Popup -->
+                <div class="popup-card bg-brandSN border border-amber-200 rounded-3xl p-6 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg" data-theme="refresh">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded bg-amber-100 text-amber-700 border border-amber-200/50">우연한 획득 🎁</span>
+                            <span class="text-xs text-gray-500 font-semibold"><i class="fa-solid fa-map-marker-alt"></i> 이동 동선 중 트럭</span>
+                        </div>
+                        
+                        <!-- High-Quality Real Image of Snickers Truck holding icebars -->
+                        <div class="mb-4 rounded-xl overflow-hidden border border-amber-100 h-44 relative">
+                            <img src="9863.jpg" alt="스니커즈 아이스바 트럭 인증샷" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x400/fff6e9/d97706?text=9863.jpg+(Snickers)'">
+                        </div>
+
+                        <h4 class="font-gmarket text-base text-amber-800 mb-1">
+                            2. 스니커즈 무빙팝업 - 아이스바 트럭
+                        </h4>
+                        <p class="text-gray-600 text-xs md:text-sm mb-4 leading-relaxed">
+                            원래 농협은행에 들어가기 전 지도 검색을 통해 스니커즈 트럭 장소를 찾아갔으나, 지정된 자리에 트럭이 보이지 않아 일단 깔끔하게 포기했었다. 그런데 다른 팝업스토어들을 즐겁게 클리어하고 맥(MAC)으로 걸어서 넘어가던 중간 길목에 떡하니 정차 중인 트럭을 우연히 대발견했다! 인스타 스토리에 인증샷을 즉시 게재해 달콤하고 차가운 딸기 초코 아이스바 2개를 획득했다. 맥 대기줄에서 시원하게 까먹으며 훌륭한 에너지 충전 수단으로 활용했다.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-amber-200 mt-4 space-y-2">
+                        <div class="text-xs text-gray-600"><strong class="text-amber-700"><i class="fa-solid fa-gift"></i> 실물 영수:</strong> 달콤 냉각된 신상 스니커즈 스트로베리 초코 아이스바 2개</div>
+                        <div class="text-xs text-gray-600"><strong class="text-indigo-600"><i class="fa-solid fa-lightbulb"></i> 알잘딱 기획 분석:</strong> 여름철 걷기에 지친 방문자의 타이밍과 경로를 포착해 아이스 디저트를 미끼 삼아 높은 바이럴과 실시간 해시태그 참여를 이끌어냈다.</div>
+                    </div>
+                </div>
+
+                <!-- Popup 3: MAC in Trendspot -->
+                <div class="popup-card bg-brandMAC border border-gray-200 rounded-3xl p-6 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg" data-theme="refresh">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded bg-gray-100 text-gray-700 border border-gray-200/50">제품 실용 체험 🎁</span>
+                            <span class="text-xs text-gray-500 font-semibold"><i class="fa-solid fa-map-marker-alt"></i> 트렌드팟</span>
+                        </div>
+                        
+                        <!-- Multi-Image Layout for MAC -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4">
+                            <div class="rounded-lg overflow-hidden border border-gray-200 h-28">
+                                <img src="9874.jpg" alt="MAC 미러셀카" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x200/f8fafc/333?text=9874.jpg'">
+                            </div>
+                            <div class="rounded-lg overflow-hidden border border-gray-200 h-28">
+                                <img src="9868.jpg" alt="MAC 발색테스트" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x200/f8fafc/333?text=9868.jpg'">
+                            </div>
+                            <div class="rounded-lg overflow-hidden border border-gray-200 h-28">
+                                <img src="9869.jpg" alt="MAC 디스플레이" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x200/f8fafc/333?text=9869.jpg'">
+                            </div>
+                        </div>
+
+                        <h4 class="font-gmarket text-base text-gray-800 mb-1">
+                            3. 맥(MAC) in 트렌드팟 성수
+                        </h4>
+                        <p class="text-gray-600 text-xs md:text-sm mb-4 leading-relaxed">
+                            올리브영 메가프라자 내부 트렌드팟 구역의 맥 행사장에 들어갔다. 카카오 플친 추가와 공식 회원가입을 마치고, 손등에 촉촉한 색감의 립글로스를 취향대로 직접 매치해 테스트했다. 현장에 구비된 아기자기한 카드 짝 맞추기 퀴즈 미션을 통과해 럭키드로우 토큰을 손에 쥐었다. 정품을 꿈꾸며 가벼운 기대로 돌렸으나 소소하게 4등이 뽑혀 하이퍼 리얼 세라 크림 샘플을 유용하게 받아왔다.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200 mt-4 space-y-2">
+                        <div class="text-xs text-gray-600"><strong class="text-gray-700"><i class="fa-solid fa-gift"></i> 실물 영수:</strong> 맥 하이퍼 리얼 세라 마이저 크림 1.5ml 샘플 파우치 1매</div>
+                        <div class="text-xs text-gray-600"><strong class="text-indigo-600"><i class="fa-solid fa-lightbulb"></i> 알잘딱 기획 분석:</strong> 신규 고객 정보(DB) 가입 유도를 단순화시켰고, 뷰티 제품을 사용자가 손쉽게 탐색할 수 있는 카드 퀴즈 장치를 더해 체류 시간을 늘렸다.</div>
+                    </div>
+                </div>
+
+                <!-- Popup 4: 성분에디터 그린토마토 (현실의 벽) -->
+                <div class="popup-card bg-brandGREEN border border-amber-200 rounded-3xl p-6 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg" data-theme="reality">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded bg-amber-100 text-amber-800 border border-amber-200/50">알잘딱 빠른 판단 ⚠️</span>
+                            <span class="text-xs text-gray-500 font-semibold"><i class="fa-solid fa-map-marker-alt"></i> 성수동 어니언 뒷길</span>
+                        </div>
+                        
+                        <!-- Syrup Friends Waiting Screenshot -->
+                        <div class="mb-4 rounded-xl overflow-hidden border border-amber-150 h-44 relative">
+                            <img src="10012.jpg" alt="시럽프렌즈 웨이팅 스크린샷" class="w-full h-full object-contain bg-white" onerror="this.src='https://placehold.co/300x200/fffbeb/78350f?text=10012.jpg+(Syrup+Friends)'">
+                        </div>
+
+                        <h4 class="font-gmarket text-base text-amber-900 mb-1">
+                            4. 성분에디터 그린토마토 마켓 팝업
+                        </h4>
+                        <p class="text-gray-600 text-xs md:text-sm mb-4 leading-relaxed font-medium">
+                            이날 마주했던 가장 험난했던 성수동 웨이팅의 실제 상황이었다. 싱그러운 과일 상자 디자인으로 기대를 자극했으나, 오후 늦게 웨이팅 태그를 걸자마자 내 대기번호는 **431번**으로 찍혔다. 실제 내 앞 대기자가 **300팀을 가볍게 초과**했고, 모바일 예상 대기 시간이 **무려 361분(6시간)**으로 떴다! 좁은 골목길에서 361분을 고단하게 마냥 버릴 수는 없으니 지체 없이 1초 만에 취소 처리를 누르고 다음 탐방 리스트로 유연하게 노선을 틀었다.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-amber-200 mt-4 space-y-2">
+                        <div class="text-xs text-gray-600"><strong class="text-amber-800"><i class="fa-solid fa-circle-xmark"></i> 실물 영수:</strong> 대기취소 확인 내역 1매 & 6시간의 소중한 길거리 보행 시간 세이브</div>
+                        <div class="text-xs text-gray-600"><strong class="text-indigo-600"><i class="fa-solid fa-lightbulb"></i> 알잘딱 기획 분석:</strong> 기약 없는 길바닥 대기에 모든 오후 에너지를 소모하는 대신, 한정된 자원(시간, 체력)을 가치 있게 소모하고자 즉시 우회 동선을 택했다. 최선의 효율 판단이었다.</div>
+                    </div>
+                </div>
+
+                <!-- Popup 5: ISOI -->
+                <div class="popup-card bg-brandISOI border border-cyan-200 rounded-3xl p-6 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg" data-theme="refresh">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded bg-cyan-100 text-cyan-700 border border-cyan-200/50">제품 실용 체험 🎁</span>
+                            <span class="text-xs text-gray-500 font-semibold"><i class="fa-solid fa-map-marker-alt"></i> 서울숲 돌목</span>
+                        </div>
+                        
+                        <!-- Image Section for ISOI -->
+                        <div class="mb-4 rounded-xl overflow-hidden border border-cyan-100 h-44 relative">
+                            <img src="9885.jpg" alt="아이소이 성수 팝업 내부" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x200/ecfeff/0891b2?text=9885.jpg+(ISOI)'">
+                        </div>
+
+                        <h4 class="font-gmarket text-base text-cyan-800 mb-1">
+                            5. 아이소이 성수 팝업스토어
+                        </h4>
+                        <p class="text-gray-600 text-xs md:text-sm mb-4 leading-relaxed font-medium">
+                            건물 외부 부스에서 시원한 자연산 붓기차를 편안히 시음할 수 있게 제공했다. 갈증을 부드럽게 풀고 내부의 "흔적 계훈 프로젝트" 스탬프 팸플릿 투어를 본격 개시했다. 카카오 플친 추가와 보습 성분 관련 정답 퀴즈 맞추기, 그리고 로즈 장벽 세럼 제품들을 야무지게 시연했다. 확보한 도장 3개로 유쾌하게 럭키드로우에 참여해 콤팩트한 불가리안 로즈 장벽 트래블 체험 샘플 묶음을 기분 좋게 챙겼다.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-cyan-200 mt-4 space-y-2">
+                        <div class="text-xs text-gray-600"><strong class="text-cyan-700"><i class="fa-solid fa-gift"></i> 실물 영수:</strong> 붓기차 시음, 아이소이 로즈 트래블 리포밍 장벽 샘플 1키트</div>
+                        <div class="text-xs text-gray-600"><strong class="text-indigo-600"><i class="fa-solid fa-lightbulb"></i> 알잘딱 기획 분석:</strong> 시각과 촉각 체험에 그치지 않고 은은한 시음 차(미각)를 매개로 자연주의 성분 중심의 친근한 브랜드 이미지를 안정감 있게 확장시켰다.</div>
+                    </div>
+                </div>
+
+                <!-- Popup 6: Shinramyun -->
+                <div class="popup-card bg-brandSR border border-red-200 rounded-3xl p-6 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg" data-theme="trend">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded bg-red-100 text-red-700 border border-red-200/50">커스텀 푸드 테크 💡</span>
+                            <span class="text-xs text-gray-500 font-semibold"><i class="fa-solid fa-map-marker-alt"></i> 성수동 메인스트리트</span>
+                        </div>
+                        
+                        <!-- Combined Image Section for Shinramyun -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4">
+                            <div class="rounded-xl overflow-hidden border border-red-100 h-44">
+                                <img src="9916.jpg" alt="라면 접수증" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x200/fff0f0/e11d48?text=9916.jpg'">
+                            </div>
+                            <div class="rounded-xl overflow-hidden border border-red-100 h-44">
+                                <img src="9917.jpg" alt="라면 토핑 고르기" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x200/fff0f0/e11d48?text=9917.jpg'">
+                            </div>
+                            <div class="rounded-xl overflow-hidden border border-red-100 h-44">
+                                <img src="9925.jpg" alt="내 얼굴 컵라면" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x200/fff0f0/e11d48?text=9925.jpg'">
+                            </div>
+                        </div>
+
+                        <h4 class="font-gmarket text-base text-red-800 mb-1">
+                            6. 농심 신라면분식 더 팩토리
+                        </h4>
+                        <p class="text-gray-600 text-xs md:text-sm mb-4 leading-relaxed font-medium">
+                            대세 라면 레시피를 바탕으로 현장에서 직접 조리해 주는 뜨끈한 툼바 라면 식사가 가능했다. 평소 국내 마트나 소매점에서는 절대 찾아볼 수 없고, 오직 해외 수출용 및 기획 라인으로 특수 제작된 한정 라면 라인업들이 전시되어 있어서 구경하는 재미가 매우 신기했다. 4,000원을 결제한 후 모니터에서 어묵, 특산스프 등 다양한 DIY 토핑을 기호대로 고른 다음, 즉석 부스에서 촬영한 내 실물 사진이 프린팅된 대형 스티커를 부착한 "세상에 하나뿐인 컵라면"을 기획했다.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-red-200 mt-4 space-y-2">
+                        <div class="text-xs text-gray-600"><strong class="text-red-700"><i class="fa-solid fa-gift"></i> 실물 영수:</strong> 내 실물 셀피 스티커 부착 커스텀 컵라면, 한정 DIY 토핑 패키지</div>
+                        <div class="text-xs text-gray-600"><strong class="text-indigo-600"><i class="fa-solid fa-lightbulb"></i> 알잘딱 기획 분석:</strong> 일반 가공식품을 '소장 가능한 기념품'으로 한 단계 격상시켰다. 소비자의 고유성(얼굴)을 부착시켜 보관과 인스타 인증 욕구를 감각적으로 유도했다.</div>
+                    </div>
+                </div>
+
+                <!-- Popup 7: Offbeauty -->
+                <div class="popup-card bg-purple-50 border border-purple-200 rounded-3xl p-6 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg" data-theme="refresh">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded bg-purple-100 text-purple-700 border border-purple-200/50">효율 득템 🎁</span>
+                            <span class="text-xs text-gray-500 font-semibold"><i class="fa-solid fa-map-marker-alt"></i> 연무장길 인근</span>
+                        </div>
+                        
+                        <!-- High-Quality Real Image of Offbeauty with Cider and Pouch -->
+                        <div class="mb-4 rounded-xl overflow-hidden border border-purple-100 h-44 relative">
+                            <img src="9959.jpg" alt="오프뷰티 실물 인증" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x200/e0f2fe/0369a1?text=9959.jpg+(Offbeauty)'">
+                        </div>
+
+                        <h4 class="font-gmarket text-base text-purple-800 mb-1">
+                            7. 오프뷰티 성수메가팩토리점
+                        </h4>
+                        <p class="text-gray-600 text-xs md:text-sm mb-4 leading-relaxed font-medium">
+                            핑크색 설비로 웅장하게 도배된 거점 매장이다. 인스타 팔로우와 구역 미션을 완수했다. 덥고 습한 날씨에 팝업 대기와 팝업 간 이동으로 덥고 목이 마르던 찰나, 감사한 음료 증정 혜택을 마주했다. 얼박사 오리지널과 얼박사 제로 중 가벼운 칼로리의 제로 음료를 초이스해 청량하게 들이켰다. 탄탄한 보라색 메쉬 파우치를 받고, 조말론 향수 당첨을 노리며 럭키 드로우에 떨리는 손을 넣어 돌렸으나 최종 마스크팩 무려 10매 무더기 당첨을 확인해 묵직한 마스크팩 팩스택을 손에 쥐었다.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-purple-200 mt-4 space-y-2">
+                        <div class="text-xs text-gray-600"><strong class="text-purple-700"><i class="fa-solid fa-gift"></i> 실물 영수:</strong> 청량한 얼박사 제로 1캔 시음, 메쉬 파우치, 수분 마스크팩 10장 세트</div>
+                        <div class="text-xs text-gray-600"><strong class="text-indigo-600"><i class="fa-solid fa-lightbulb"></i> 알잘딱 기획 분석:</strong> 여름 더위에 목말라하는 고객 맥락을 영리하게 파악해 웰컴 에너지 드링크를 연결했다. 경품의 규모감을 넓혀 만족감을 크게 증대시켰다.</div>
+                    </div>
+                </div>
+
+                <!-- Popup 8: Cell Fusion C -->
+                <div class="popup-card bg-brandCELL border border-blue-200 rounded-3xl p-6 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg" data-theme="refresh">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded bg-blue-100 text-blue-700 border border-blue-200/50">피부 쿨링 실용체험 🎁</span>
+                            <span class="text-xs text-gray-500 font-semibold"><i class="fa-solid fa-map-marker-alt"></i> 아차산로 구역</span>
+                        </div>
+                        
+                        <!-- Image Section for Cell Fusion C -->
+                        <div class="mb-4 rounded-xl overflow-hidden border border-blue-100 h-44 relative">
+                            <img src="10005.jpg" alt="셀퓨전씨 거울셀카" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x200/f0f9ff/0284c7?text=10005.jpg+(Cell+Fusion+C)'">
+                        </div>
+
+                        <h4 class="font-gmarket text-base text-blue-800 mb-1">
+                            8. 셀퓨전씨 쿨링 팝업스토어
+                        </h4>
+                        <p class="text-gray-600 text-xs md:text-sm mb-4 leading-relaxed">
+                            햇빛이 가득한 거리에 서서 약 30분의 대기 끝에 기분 좋은 청량 내부 공간으로 무사 진입했다. 피부 온도 하락과 UV 대처 상식에 관한 O, X 스마트 지식 퀴즈를 맞추고, 내부 미러 포토존에서 시그니처 핑크 종이 가방을 들고 세련된 인증 셀카를 찰칵 남겼다. 야외 야외활동에 최적인 고기능성 쿨 선크림과 미니 패드 샘플 파우치 팩을 알차게 챙기며 효율적인 피부 케어 대책을 완성했다.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-blue-200 mt-4 space-y-2">
+                        <div class="text-xs text-gray-600"><strong class="text-blue-700"><i class="fa-solid fa-gift"></i> 실물 영수:</strong> 야외 스포츠 썬스크린 샘플 3종, 약산성 스킨 패드 팩</div>
+                        <div class="text-xs text-gray-600"><strong class="text-indigo-600"><i class="fa-solid fa-lightbulb"></i> 알잘딱 기획 분석:</strong> 여름철 필수 자극 요소인 자외선 수치 대처에 대한 명확한 기능적 원리를 강조하고, 즉각적인 피부 온도 피드백 솔루션을 제공하는 탄탄한 기술적 유대감을 구축했다.</div>
+                    </div>
+                </div>
+
+                <!-- Popup 9: Romand -->
+                <div class="popup-card bg-brandROM border border-pink-200 rounded-3xl p-6 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg" data-theme="refresh">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded bg-pink-100 text-pink-700 border border-pink-200/50">소비 최적화 기획 🎁</span>
+                            <span class="text-xs text-gray-500 font-semibold"><i class="fa-solid fa-map-marker-alt"></i> 연무장길 인근</span>
+                        </div>
+                        
+                        <!-- Image Section for Romand -->
+                        <div class="mb-4 rounded-xl overflow-hidden border border-pink-100 h-44 relative">
+                            <img src="9998.jpg" alt="롬앤 틴트 공병 수거 참여" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x200/fff1f2/db2777?text=9998.jpg+(Romand)'">
+                        </div>
+
+                        <h4 class="font-gmarket text-base text-pink-800 mb-1">
+                            9. 롬앤 핑크오피스 팝업스토어
+                        </h4>
+                        <p class="text-gray-600 text-xs md:text-sm mb-4 leading-relaxed font-medium">
+                            평소 데일리용으로 롬앤 틴트를 즐겨 썼는데, 마침 딱 맞춰서 쓰던 틴트를 다 썼기 때문에 하나 더 사야 했다. 마침 7/12까지 기획 한정으로 운영되는 공병 리사이클 이벤트가 열려 방문했다. 다 쓴 빈 화장품 플라스틱 공병을 수거함에 흔쾌히 기부하는 친환경 Green Chemi 이벤트에 참여해, 촉촉한 베어 워터 정품 틴트 1개를 무료로 득템하는 기염을 토했다! 더불어 원래 사려던 신상 틴트(10,900원)를 한 개 구매했더니 만 원 이상 구매 기프트 조건이 깔끔하게 충족되어 영롱한 한정판 실버 틴트링까지 덤으로 야무지게 받아왔다. 만족도 최고의 알뜰 쇼핑이었다!
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-pink-200 mt-4 space-y-2">
+                        <div class="text-xs text-gray-600"><strong class="text-pink-700"><i class="fa-solid fa-gift"></i> 실물 영수:</strong> 교환받은 베어 워터 틴트 정품, 새로 산 틴트, 소장용 실버 틴트링 악세서리</div>
+                        <div class="text-xs text-gray-600"><strong class="text-indigo-600"><i class="fa-solid fa-lightbulb"></i> 알잘딱 기획 분석:</strong> 소비자의 기존 사용 습관(틴트 소진) and ESG 리사이클(공병 환수)을 현명하게 정렬시켰고, 만 원대 실속 구매 유도로 부가 기프트를 증정하며 완벽한 단골 락인을 이끌어냈다.</div>
+                    </div>
+                </div>
+
+                <!-- Popup 10: Olive Young Beauty Mansion -->
+                <div class="popup-card bg-brandOY border border-lime-200 rounded-3xl p-6 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg md:col-span-2" data-theme="trend">
+                    <div class="grid md:grid-cols-12 gap-6">
+                        <!-- Left text and analysis -->
+                        <div class="md:col-span-5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-4">
+                                    <span class="text-[10px] font-bold px-2.5 py-1 rounded bg-lime-100 text-lime-700 border border-lime-200/50">NFC 체크인 연동 💡</span>
+                                    <span class="text-xs text-gray-500 font-semibold"><i class="fa-solid fa-map-marker-alt"></i> 성수 일대 지정 올영</span>
+                                </div>
+                                <h4 class="font-gmarket text-xl text-lime-800 mb-2">10. 올리브영 뷰티 맨션 성수</h4>
+                                <p class="text-gray-600 text-xs md:text-sm mb-4 leading-relaxed font-medium">
+                                    성수동 골목 동선을 징검다리 삼아 올리브영 성수 거점 매장들을 효율적으로 딛는 모바일 체크인 랠리였다. 뷰티 맨션 본부를 포함한 지정 올영 매장들에 방문해 휴대폰 NFC 안테나를 가볍게 태깅하면 스마트 스탬프가 신속하게 누적됐다. 이 영리한 로컬 체크인 랠리를 최종 클리어하고, 끈적임 없는 산뜻한 수분막 피팅을 자랑하는 <strong>'NAD-PRIZCELL 글로우 필름 마스크 5+1 기획 패키지 정품 세트 박스'</strong>를 무사히 품에 안았다.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-lime-200 mt-4 space-y-2">
+                                <div class="text-xs text-gray-600"><strong class="text-lime-700"><i class="fa-solid fa-gift"></i> 실물 영수:</strong> NAD-PRIZCELL 글로우 필름 마스크팩 6매입 기획 상자 정품</div>
+                                <div class="text-xs text-gray-600"><strong class="text-indigo-600"><i class="fa-solid fa-lightbulb"></i> 알잘딱 기획 분석:</strong> 하드웨어 모바일 태깅 기술(NFC)을 활용해 성수 로컬 매장 전체를 투어 허브로 변모시켰다. 단건 매장 방문을 넘어 상권 일대를 동시 지배하는 정교한 공간 지배형 게이미피케이션 동선이었다.</div>
+                            </div>
+                        </div>
+
+                        <!-- Right interactive timeline images -->
+                        <div class="md:col-span-7 space-y-3">
+                            <div class="text-xs font-bold text-lime-700 mb-1 flex items-center">
+                                <i class="fa-solid fa-camera-retro mr-1"></i> 올영 체크인 랠리 타임라인 (클릭하여 흐름 추적)
+                            </div>
+                            
+                            <!-- Interactive Slide Container -->
+                            <div class="relative bg-white p-3 rounded-2xl border border-lime-100 shadow-sm">
+                                <div class="relative h-56 rounded-lg overflow-hidden bg-gray-50">
+                                    <!-- Image Slides -->
+                                    <img id="oy-slide-1" src="10018.jpg" alt="성수동 올영 지도" class="oy-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-300 opacity-100" onerror="this.src='https://placehold.co/600x400/f4fce3/4d6a13?text=10018.jpg+(Seongsu+Map)'">
+                                    <img id="oy-slide-2" src="10022.jpg" alt="올리브영 스토어 입구" class="oy-slide w-full h-full object-cover absolute inset-0 transition-opacity duration-300 opacity-0" onerror="this.src='https://placehold.co/600x400/f4fce3/4d6a13?text=10022.jpg+(Olive+Young+Store)'">
+                                    <img id="oy-slide-3" src="10020.jpg" alt="랠리 화면" class="oy-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-300 opacity-0" onerror="this.src='https://placehold.co/600x400/f4fce3/4d6a13?text=10020.jpg+(NFC+Web+Screen)'">
+                                    <img id="oy-slide-4" src="10031.jpg" alt="보상 정품 마스크팩 수령" class="oy-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-300 opacity-0" onerror="this.src='https://placehold.co/600x400/f4fce3/4d6a13?text=10031.jpg+(Glow+Film+Mask+Reward)'">
+                                    
+                                    <img id="oy-slide-5" src="10023.jpg" alt="랠리 단계2" class="oy-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-300 opacity-0" onerror="this.src='https://placehold.co/600x400/f4fce3/4d6a13?text=10023.jpg+(Step2+Rally)'">
+                                    <img id="oy-slide-6" src="10026.jpg" alt="랠리 단계3" class="oy-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-300 opacity-0" onerror="this.src='https://placehold.co/600x400/f4fce3/4d6a13?text=10026.jpg+(Step3+Rally)'">
+                                    <img id="oy-slide-7" src="10028.jpg" alt="랠리 단계4" class="oy-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-300 opacity-0" onerror="this.src='https://placehold.co/600x400/f4fce3/4d6a13?text=10028.jpg+(Final+Checkin)'">
+                                </div>
+                                
+                                <!-- Slider buttons -->
+                                <div class="flex justify-between items-center mt-2.5">
+                                    <span class="text-[10px] text-gray-400 font-mono" id="oy-slide-caption">1/7 단계: 성수동 올영 지도 서칭 (10018.jpg)</span>
+                                    <div class="flex space-x-1">
+                                        <button onclick="prevOYSlide()" class="p-1.5 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-md transition-colors"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                                        <button onclick="nextOYSlide()" class="p-1.5 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-md transition-colors"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Slide steps indicators -->
+                                <div class="flex flex-wrap gap-1 justify-between mt-3 px-1">
+                                    <button onclick="setOYSlide(1)" class="oy-dot-btn flex-1 py-1 rounded bg-lime-200 text-[9px] font-bold text-lime-800 text-center transition-all">지도</button>
+                                    <button onclick="setOYSlide(2)" class="oy-dot-btn flex-1 py-1 rounded bg-gray-100 text-[9px] text-gray-400 text-center transition-all">실물</button>
+                                    <button onclick="setOYSlide(3)" class="oy-dot-btn flex-1 py-1 rounded bg-gray-100 text-[9px] text-gray-400 text-center transition-all">태깅</button>
+                                    <button onclick="setOYSlide(5)" class="oy-dot-btn flex-1 py-1 rounded bg-gray-100 text-[9px] text-gray-400 text-center transition-all">랠리2</button>
+                                    <button onclick="setOYSlide(6)" class="oy-dot-btn flex-1 py-1 rounded bg-gray-100 text-[9px] text-gray-400 text-center transition-all">랠리3</button>
+                                    <button onclick="setOYSlide(7)" class="oy-dot-btn flex-1 py-1 rounded bg-gray-100 text-[9px] text-gray-400 text-center transition-all">완료</button>
+                                    <button onclick="setOYSlide(4)" class="oy-dot-btn flex-1 py-1 rounded bg-gray-100 text-[9px] text-gray-400 text-center transition-all">보상</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ultimate Unboxing Section -->
+    <section id="loot-unboxing" class="py-16 bg-gradient-to-tr from-skyPastel/40 via-pinkPastel/30 to-mintPastel/40 border-t border-b border-blue-100/40">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-gmarket text-2xl md:text-3xl text-gray-800 mb-2">
+                    🛍️ 침대를 탈출한 자들의 전리품 언박싱 (Loot Bag)
+                </h2>
+                <p class="text-pink-500 font-bold uppercase tracking-wider text-[11px]">Seongsu Popup Treasure Bag</p>
+                <div class="w-12 h-1 bg-pink-200 mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-500 mt-4 text-xs md:text-sm">
+                    왕복 3시간의 콤팩트한 스마트 투어가 선사한 아름다운 결과물! <br class="hidden sm:inline">
+                    최종 전리품 가방 실물 떼샷(`10035_2.jpg`)을 눌러 각 소품의 획득 내러티브를 즐겨보자.
+                </p>
+            </div>
+
+            <div class="bg-white/80 border border-blue-100 rounded-3xl p-6 md:p-10 shadow-sm relative">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Loot Bag Real Image -->
+                    <div class="md:col-span-6">
+                        <div class="relative rounded-2xl overflow-hidden border border-blue-100 shadow-md group">
+                            <img src="10035_2.jpg" alt="성수동 팝업 최종 전리품 가방 떼샷" class="w-full h-auto object-cover max-h-[500px]" onerror="this.src='https://placehold.co/600x600/fce7f3/735105?text=10035_2.jpg+(Loot+Bag)'">
+                            <div class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-all duration-300"></div>
+                            <div class="absolute bottom-3 left-3 bg-white/90 border border-blue-200 px-3 py-1.5 rounded-xl shadow-xs text-[11px] text-gray-700 font-bold flex items-center">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
+                                실물 전리품 가방 최종 인증 스냅샷
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Loot Items Interactive Checklist -->
+                    <div class="md:col-span-6 space-y-4">
+                        <h4 class="font-gmarket text-lg text-gray-800 flex items-center">
+                            <i class="fa-solid fa-cube text-indigo-400 mr-2"></i> 가방 속 소품 상세 도감
+                        </h4>
+                        <p class="text-xs text-gray-400">도감 카드를 클릭하면 실시간으로 해당 소품의 획득 비하인드가 펼쳐진다!</p>
+                        
+                        <!-- Interactive Items List -->
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <button onclick="selectLoot('nh_clover', this)" class="loot-btn text-left p-2.5 rounded-xl border border-emerald-150 bg-emerald-50/50 hover:bg-emerald-50 text-xs font-semibold text-emerald-800 transition-all flex items-center shadow-xs active-loot ring-2 ring-indigo-300">
+                                <span class="mr-1.5">☘️</span> NH클로버 키캡 키링
+                            </button>
+                            <button onclick="selectLoot('ramen_selfie', this)" class="loot-btn text-left p-2.5 rounded-xl border border-red-100 bg-red-50/50 hover:bg-red-50 text-xs font-semibold text-red-800 transition-all flex items-center shadow-xs">
+                                <span class="mr-1.5">🍜</span> 내 얼굴 DIY 컵라면
+                            </button>
+                            <button onclick="selectLoot('romand_tints', this)" class="loot-btn text-left p-2.5 rounded-xl border border-pink-100 bg-pink-50/50 hover:bg-pink-50 text-xs font-semibold text-pink-800 transition-all flex items-center shadow-xs">
+                                <span class="mr-1.5">💄</span> 롬앤 틴트 & 틴트링
+                            </button>
+                            <button onclick="selectLoot('oy_pack', this)" class="loot-btn text-left p-2.5 rounded-xl border border-lime-100 bg-lime-50/50 hover:bg-lime-50 text-xs font-semibold text-lime-800 transition-all flex items-center shadow-xs">
+                                <span class="mr-1.5">🟢</span> 올영 수분 팩 6매입
+                            </button>
+                            <button onclick="selectLoot('sn_strawberry', this)" class="loot-btn text-left p-2.5 rounded-xl border border-amber-100 bg-amber-50/50 hover:bg-amber-50 text-xs font-semibold text-amber-800 transition-all flex items-center shadow-xs">
+                                <span class="mr-1.5">🍫</span> 스니커즈 아이스바
+                            </button>
+                            <button onclick="selectLoot('offbeauty_packs', this)" class="loot-btn text-left p-2.5 rounded-xl border border-purple-100 bg-purple-50/50 hover:bg-purple-50 text-xs font-semibold text-purple-800 transition-all flex items-center shadow-xs">
+                                <span class="mr-1.5">🧴</span> 오프뷰티 팩 10장 세트
+                            </button>
+                        </div>
+
+                        <!-- Info Display Panel -->
+                        <div class="bg-gray-50 border border-gray-150 rounded-2xl p-4 min-h-[140px] flex flex-col justify-center" id="loot-info-box">
+                            <h5 class="font-gmarket text-xs text-emerald-700 mb-1" id="loot-title">☘️ NH클로버 키캡 키링 (농협 드림뱅크 전리품)</h5>
+                            <p class="text-xs text-gray-600 leading-relaxed" id="loot-desc">
+                                모임 통장을 개설하고 게이지 챌린지를 마친 뒤, 고심해서 직접 커스터마이징하여 완성한 키캡 키링이다. 키보드 스위치에 꽂고 타이핑해 보니 사운드 타건감이 진심 예술이고 짤각짤각 소리가 짱 좋다!
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Selling Points Section -->
+    <section id="strengths" class="py-16 bg-white/40">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-gmarket text-2xl md:text-3xl text-gray-800 mb-2">
+                    주인공의 반전 스마트 매력 (Selling Points)
+                </h2>
+                <p class="text-indigo-400 font-bold uppercase tracking-wider text-[11px]">Why This Journey is Special</p>
+                <div class="w-12 h-1 bg-indigo-200 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-[#F0F9FF] border border-blue-100 rounded-2xl p-6 hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-laptop text-blue-500 text-lg"></i>
+                    </div>
+                    <h3 class="font-gmarket text-lg text-gray-800 mb-3">수리산-성수 하이브리드 여정</h3>
+                    <p class="text-gray-500 text-xs md:text-sm leading-relaxed">
+                        주말 도어 투 도어 왕복 3시간 길 위의 소중한 시간을 무익하게 날리지 않았다. 지하철 안에서 맥북을 펴고 노션 작업과 블로그 기획을 기분 좋게 끝내버린 스마트한 여정의 극치다.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-[#FFF5F5] border border-red-100 rounded-2xl p-6 hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-face-smile-wink text-red-500 text-lg"></i>
+                    </div>
+                    <h3 class="font-gmarket text-lg text-gray-800 mb-3">100% 솔직담백한 생존 일지</h3>
+                    <p class="text-gray-500 text-xs md:text-sm leading-relaxed">
+                        광고나 제증명 제안이 전혀 섞이지 않은 날것 그대로의 이야기다. 터무니없이 대기 시간이 긴 성분에디터 같은 팝업은 즉각 철수하고 대체 루트로 발 빠르게 돌파했던 유쾌한 현실주의 기법을 다룬다.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-[#ECFDF5] border border-emerald-100 rounded-2xl p-6 hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-award text-emerald-500 text-lg"></i>
+                    </div>
+                    <h3 class="font-gmarket text-lg text-gray-800 mb-3">기획적으로 분석한 비즈니스</h3>
+                    <p class="text-gray-500 text-xs md:text-sm leading-relaxed">
+                        단순 맹목적인 선물 사냥이 아니다. 올리브영의 오프라인 NFC 게이미피케이션 기법, 농심의 셀피 커스터마이징 푸드 팩, 롬앤의 ESG 리사이클 환수 장치 등 트렌디한 기획을 똑부러지게 읽어냈다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Epilogue Section -->
+    <section class="py-16 bg-gradient-to-b from-[#FAFDFD] to-[#F1F5F9] relative overflow-hidden text-center">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <span class="text-xs text-indigo-400 font-bold uppercase tracking-widest mb-4 block">4단계: 에필로그</span>
+            <h2 class="font-gmarket text-2xl md:text-4xl text-gray-800 mb-6 leading-tight">
+                "완벽한 이른 아침 오픈런보다,<br class="md:hidden"> 홀가분한 오후 4시가 더 좋았어"
+            </h2>
+            <p class="text-gray-600 text-sm md:text-base mb-8 leading-relaxed max-w-xl mx-auto">
+                새벽 6시에 일어나 피곤에 찌든 오픈런 대기를 타지 않아도 충분했다. <br class="hidden sm:inline">
+                오후 느지막이 상쾌하게 움직여 가볍게 땀 흘리며 성수를 정복한 1만 보의 개운함. 이동 시간을 100% 효율로 작업한 덕에 오늘 하루가 밀도 높게 아주 꽉 채워졌다.
+            </p>
+            <div class="inline-block bg-white border border-blue-100/50 rounded-2xl p-6 mb-8 text-left max-w-md mx-auto shadow-xs">
+                <div class="text-xs md:text-sm text-gray-500 italic leading-relaxed">
+                    "방구석 침대에 누워 주말을 다 보냈다고 자책하고 계신다면, 오후 늦게라도 전혀 늦지 않았으니 지금 당장 가볍게 털고 일어나 2호선 성수행 지하철에 올라타는 걸 추천합니다. 그 상쾌한 1만 보가 주말의 밀도를 뒤바꿔줄 테니까요."
+                </div>
+                <div class="text-xs text-indigo-400 font-bold mt-4 text-right">— 침대를 가뿐히 탈출한 알잘딱 눕방러 선배 드림</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Game/Quiz CTA Section -->
+    <section id="interactive-cta" class="py-16 bg-white border-t border-blue-100/40 relative">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-gradient-to-br from-blue-50/50 via-pink-50/30 to-indigo-50/50 border border-blue-100 rounded-3xl p-8 md:p-12 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-48 h-48 bg-blue-100/30 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-pink-100/30 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="text-center mb-10">
+                    <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-[10px] rounded-full font-gmarket uppercase tracking-wide">Self-Check Checklist</span>
+                    <h2 class="font-gmarket text-2xl md:text-3xl text-gray-800 mt-4 mb-2">당신의 주말 '눕방 지수' 진단 테스트</h2>
+                    <p class="text-gray-500 text-xs md:text-sm">평소 휴일에 겪는 패턴을 체크하면, 최적화 극복 가이드라인을 제공한다!</p>
+                </div>
+
+                <!-- Interactive Quiz Block -->
+                <div class="space-y-3 max-w-xl mx-auto" id="quiz-block">
+                    <!-- Option 1 -->
+                    <label class="flex items-start space-x-3 bg-white border border-gray-150 rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition-colors shadow-xs">
+                        <input type="checkbox" class="quiz-checkbox mt-1 rounded border-gray-300 text-blue-500 focus:ring-blue-400 h-4 w-4" value="25">
+                        <span class="text-xs md:text-sm text-gray-600 leading-relaxed">휴일 오전, 눈을 뜨고도 이불 밖으로 나가지 않고 스마트폰 숏폼(릴스, 쇼츠)을 1시간 이상 멍하니 보냈다.</span>
+                    </label>
+                    <!-- Option 2 -->
+                    <label class="flex items-start space-x-3 bg-white border border-gray-150 rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition-colors shadow-xs">
+                        <input type="checkbox" class="quiz-checkbox mt-1 rounded border-gray-300 text-blue-500 focus:ring-blue-400 h-4 w-4" value="25">
+                        <span class="text-xs md:text-sm text-gray-600 leading-relaxed">'성수 한번 가볼까' 고민하다가 아침 오픈런 대기 시각을 놓쳤다는 생각에 나가기를 원천 포기했다.</span>
+                    </label>
+                    <!-- Option 3 -->
+                    <label class="flex items-start space-x-3 bg-white border border-gray-150 rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition-colors shadow-xs">
+                        <input type="checkbox" class="quiz-checkbox mt-1 rounded border-gray-300 text-blue-500 focus:ring-blue-400 h-4 w-4" value="25">
+                        <span class="text-xs md:text-sm text-gray-600 leading-relaxed">성수동 팝업이나 플래그십 매장들은 광고성 투성이라 나같은 사람과는 거리감이 있다고 느꼈다.</span>
+                    </label>
+                    <!-- Option 4 -->
+                    <label class="flex items-start space-x-3 bg-white border border-gray-150 rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition-colors shadow-xs">
+                        <input type="checkbox" class="quiz-checkbox mt-1 rounded border-gray-300 text-blue-500 focus:ring-blue-400 h-4 w-4" value="25">
+                        <span class="text-xs md:text-sm text-gray-600 leading-relaxed">지루한 일상에 기분 전환은 필요한데, 각잡고 하는 무거운 등산이나 트레이닝 운동은 솔직히 조금 무겁고 귀찮다.</span>
+                    </label>
+
+                    <button onclick="calculateQuizScore()" class="w-full mt-6 py-4 bg-gradient-to-r from-blue-400 to-indigo-400 hover:from-blue-500 hover:to-indigo-500 text-white font-gmarket rounded-xl transition-all shadow-md hover:scale-[1.01] text-xs md:text-sm">
+                        내 눕방 레벨 진단 및 액션 제안받기 <i class="fa-solid fa-wand-magic-sparkles ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Interactive Quiz Result Display Area -->
+                <div class="hidden max-w-xl mx-auto bg-white border border-gray-150 rounded-2xl p-6 mt-8 text-center shadow-xs" id="quiz-result">
+                    <div class="text-[10px] text-indigo-400 font-bold uppercase tracking-widest mb-1">Diagnosis Result</div>
+                    <h3 class="text-lg md:text-xl font-gmarket text-gray-800 mb-4">나의 주말 눕방 점수: <span class="text-indigo-500 border-b-2 border-indigo-200" id="score-display">0점</span></h3>
+                    
+                    <p class="text-xs md:text-sm text-gray-600 mb-6 leading-relaxed" id="recommendation-text">
+                        진단 결과 산출 중...
+                    </p>
+
+                    <button onclick="resetQuiz()" class="text-xs text-gray-400 hover:text-gray-600 underline cursor-pointer">
+                        테스트 리셋하고 다시 체크하기
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Toast Message Notification -->
+    <div id="custom-toast" class="fixed bottom-6 right-6 z-50 bg-white border border-indigo-100 rounded-2xl p-4 shadow-lg transition-all duration-300 translate-y-24 opacity-0 max-w-xs flex items-center space-x-3 pointer-events-none">
+        <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-lg">
+            ✨
+        </div>
+        <div>
+            <div class="text-xs font-bold text-gray-800">동기 부여 완료!</div>
+            <div class="text-[10px] text-gray-500" id="toast-message">이불 속 탈출 에너지가 차오르고 있어요!</div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-blue-50 border-t border-blue-100/60 py-12">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-gmarket text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-500">
+                    10,434 STEPS
+                </span>
+                <p class="text-[11px] text-gray-400 mt-2">
+                    주말 눕방러의 힐링 극복 일지 & 성수동 하이브리드 투어 가이드 © 2026. All rights reserved.
+                </p>
+            </div>
+            
+            <div class="flex space-x-6 text-xs font-semibold">
+                <button onclick="copySharingLink()" class="text-gray-500 hover:text-gray-800 transition-colors flex items-center">
+                    <i class="fa-solid fa-share-nodes mr-1.5"></i> 이 스토리 공유하기
+                </button>
+                <a href="#popups" class="text-gray-500 hover:text-gray-800 transition-colors flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-1.5"></i> 탐방 코스 보기
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Start stats animation counters when loaded
+        window.onload = function() {
+            animateValue("stat-hours", 1, 3, 1000, "h");
+            animateValue("stat-steps", 9000, 10434, 1500, "");
+            animateValue("stat-popups", 1, 10, 1200, "");
+        };
+
+        // Custom Value Counter Animation
+        function animateValue(id, start, end, duration, suffix) {
+            let obj = document.getElementById(id);
+            if (!obj) return;
+            let range = end - start;
+            let current = start;
+            let increment = end > start ? 1 : -1;
+            let stepTime = Math.abs(Math.floor(duration / range));
+            if(stepTime < 1) stepTime = 1;
+            
+            let timer = setInterval(function() {
+                if (suffix === "") {
+                    current += Math.ceil(range / (duration / 16));
+                    if (current >= end) {
+                        current = end;
+                        clearInterval(timer);
+                    }
+                    obj.textContent = current.toLocaleString();
+                } else {
+                    current += increment;
+                    if (current == end) {
+                        clearInterval(timer);
+                    }
+                    obj.textContent = current + suffix;
+                }
+            }, 16);
+        }
+
+        // Interactive Blanket Slide Controller
+        let clickedCount = 0;
+        function kickTheBlanket() {
+            clickedCount++;
+            let dreadBar = document.getElementById('dread-bar');
+            let dreadPercentage = document.getElementById('dread-percentage');
+            let desireBar = document.getElementById('desire-bar');
+            let desirePercentage = document.getElementById('desire-percentage');
+            
+            let currentDread = 90 - (clickedCount * 25);
+            let currentDesire = 35 + (clickedCount * 20);
+
+            if (currentDread < 0) currentDread = 0;
+            if (currentDesire > 100) currentDesire = 100;
+
+            dreadBar.style.width = currentDread + '%';
+            dreadPercentage.textContent = currentDread + '%';
+            desireBar.style.width = currentDesire + '%';
+            desirePercentage.textContent = currentDesire + '%';
+
+            if (currentDread <= 0 && currentDesire >= 100) {
+                showToast("이불 탈출 대성공! 당장 노트북을 챙겨 수리산역에서 DDP 환승 성수행 열차에 오르자! 🏃");
+            } else {
+                showToast("의지가 꿈틀거리는 게 느껴진다! 한 번 더 걷어차 무기력을 이겨보자!");
+            }
+        }
+
+        // Show Custom Toast Notification
+        function showToast(message) {
+            let toast = document.getElementById('custom-toast');
+            let toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+            
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 4000);
+        }
+
+        // Filter 10 Popups Grid based on Tab Themes
+        function filterTheme(theme) {
+            let cards = document.querySelectorAll('.popup-card');
+            let buttons = document.querySelectorAll('.theme-btn');
+            
+            // Toggle Active classes on buttons
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-sky-400', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-gray-100', 'text-gray-600');
+            });
+
+            document.getElementById(`btn-theme-${theme}`).classList.add('bg-sky-400', 'text-white', 'shadow-sm');
+            document.getElementById(`btn-theme-${theme}`).classList.remove('bg-gray-100', 'text-gray-600');
+
+            cards.forEach(card => {
+                if (theme === 'all') {
+                    card.style.display = 'flex';
+                } else {
+                    if (card.getAttribute('data-theme') === theme) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Olive Young Gallery Interaction Code
+        let currentOYIndex = 1;
+        const totalOYSlides = 7;
+        const captions = [
+            "1/7 단계: 성수동 올영 지도 서칭 (10018.jpg)",
+            "2/7 단계: 대세인 올영 스토어 입구 탐방 (10022.jpg)",
+            "3/7 단계: NFC 태깅으로 현장 체크인 (10020.jpg)",
+            "4/7 단계: 최종 랠리 보상 수령 (10031.jpg)",
+            "5/7 단계: 뷰티 맨션 미션 대시보드 (10023.jpg)",
+            "6/7 단계: 지정 올영 매장 연방점 탐색 (10026.jpg)",
+            "7/7 단계: 최종 체크인 완료 화면 (10028.jpg)"
+        ];
+
+        function showOYSlide(index) {
+            let slides = document.querySelectorAll('.oy-slide');
+            let dotBtns = document.querySelectorAll('.oy-dot-btn');
+            
+            slides.forEach(slide => {
+                slide.classList.remove('opacity-100');
+                slide.classList.add('opacity-0');
+            });
+
+            dotBtns.forEach(btn => {
+                btn.classList.remove('bg-lime-200', 'text-lime-800', 'font-bold');
+                btn.classList.add('bg-gray-100', 'text-gray-400');
+            });
+
+            let slideId = index;
+            document.getElementById(`oy-slide-${slideId}`).classList.remove('opacity-0');
+            document.getElementById(`oy-slide-${slideId}`).classList.add('opacity-100');
+            
+            let btnIndex = index === 1 ? 0 : index === 2 ? 1 : index === 3 ? 2 : index === 4 ? 6 : index === 5 ? 3 : index === 6 ? 4 : 5;
+            dotBtns[btnIndex].classList.add('bg-lime-200', 'text-lime-800', 'font-bold');
+            dotBtns[btnIndex].classList.remove('bg-gray-100', 'text-gray-400');
+
+            document.getElementById('oy-slide-caption').textContent = captions[index - 1];
+        }
+
+        function nextOYSlide() {
+            currentOYIndex++;
+            if (currentOYIndex > totalOYSlides) {
+                currentOYIndex = 1;
+            }
+            showOYSlide(currentOYIndex);
+        }
+
+        function prevOYSlide() {
+            currentOYIndex--;
+            if (currentOYIndex < 1) {
+                currentOYIndex = totalOYSlides;
+            }
+            showOYSlide(currentOYIndex);
+        }
+
+        function setOYSlide(num) {
+            currentOYIndex = num;
+            showOYSlide(num);
+        }
+
+        // Loot Bag Unboxing Click Interaction
+        const lootDetails = {
+            nh_clover: {
+                title: "☘️ NH클로버 키캡 키링 (농협 드림뱅크 전리품)",
+                desc: "모임 통장을 그 자리에서 즉시 개설하고 게이지를 두드리는 협동 미션을 완료했다. 마친 후 내 손으로 소중히 조합해 완성한 네잎클로버 키캡 키링이다. 기계식 스위치에 꽂고 가볍게 타건해 보니 짤각짤각하는 맑은 타건음이 아주 일품이다.",
+                color: "text-emerald-700"
+            },
+            ramen_selfie: {
+                title: "🍜 내 사진 DIY 컵라면 (신라면분식 더 팩토리)",
+                desc: "성수동 농심 분식 팩토리 체험관에서 즉각 셀피 촬영 기기로 사진을 남겼다. 내 얼굴을 컵라면 전면 프레임에 스티커로 정성스럽게 밀착 인쇄해 보존했다. 떼샷 주머니(10035_2.jpg) 하단 왼쪽에 보면 제 셀카가 인쇄된 귀여운 빨간 컵라면을 그대로 발견할 수 있다.",
+                color: "text-red-700"
+            },
+            romand_tints: {
+                title: "💄 롬앤 공병 수거 틴트 & 실버 틴트링 (롬앤 핑크오피스)",
+                desc: "핑크 오피스 팝업 한정 틴트 용기 수거함에 다 쓴 공병을 알차게 교환 기부해 무료로 증정받은 시그니처 틴트다. 그리고 사려던 정가 10,900원의 신상 틴트를 구매함으로써 기준 금액(만 원 이상)이 똑똑하게 완비되어 귀여운 한정판 실버 틴트링까지 알뜰하게 얻었다.",
+                color: "text-pink-700"
+            },
+            oy_pack: {
+                title: "🟢 올영 수분 팩 6매입 (올리브영 뷰티 맨션 스탬프 랠리)",
+                desc: "성수동 일대를 고루 걸어 다니며 4곳의 올리브영 매장에 완벽하게 NFC 체크인을 완성하고, 정가 보상 리워드로 획득한 올리브영 정품 ‘NAD-PRIZCELL 글로우 필름 마스크 5+1입 기획 박스’다. 주말 1만 보 여정에 영광스러운 보상으로 투명백 내부에 위풍당당하게 꽉 차 있는 전리품의 영롱한 실물!",
+                color: "text-lime-750"
+            },
+            sn_strawberry: {
+                title: "🍫 스니커즈 딸기 맛 바 (스니커즈 트럭 무빙 팝업)",
+                desc: "소셜 미션 완료 시 트럭 냉동 부스에서 즉각 꺼내어 증정한 청량하고 달콤한 스니커즈 아이스바다! 맥(MAC) 대기줄에 서서 아주 유용하게 해치우며 한낮 덥고 피곤한 대기 줄에서 최고의 비상 영양소 역할을 했다.",
+                color: "text-amber-700"
+            },
+            offbeauty_packs: {
+                title: "🧴 오프뷰티 수분 마스크팩 10장 무더기 (성수메가팩토리)",
+                desc: "갈증을 시원하게 제압해 주는 탄산 톡 쏘는 제로 얼박사 드링크와 더불어, 럭키드로우의 떨리는 뽑기 통 속에서 행운이 가득 깃들며 단숨에 무려 10장의 고농축 마스크팩 정품 묶음이 당첨되는 이변을 통 크게 맞닥뜨렸던 전리품이다!",
+                color: "text-purple-700"
+            }
+        };
+
+        function selectLoot(key, element) {
+            document.querySelectorAll('.loot-btn').forEach(btn => {
+                btn.classList.remove('active-loot', 'ring-2', 'ring-indigo-300');
+            });
+            
+            element.classList.add('active-loot', 'ring-2', 'ring-indigo-300');
+
+            const info = lootDetails[key];
+            const titleElement = document.getElementById('loot-title');
+            const descElement = document.getElementById('loot-desc');
+            const infoBox = document.getElementById('loot-info-box');
+
+            titleElement.textContent = info.title;
+            titleElement.className = `font-gmarket text-xs mb-1 ${info.color}`;
+            descElement.textContent = info.desc;
+
+            infoBox.classList.add('scale-95', 'opacity-80');
+            setTimeout(() => {
+                infoBox.classList.remove('scale-95', 'opacity-80');
+            }, 100);
+        }
+
+        // Quiz Calculation Logic
+        function calculateQuizScore() {
+            let checkboxes = document.querySelectorAll('.quiz-checkbox');
+            let score = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) {
+                    score += parseInt(cb.value);
+                }
+            });
+
+            document.getElementById('score-display').textContent = score + "점";
+            let recText = "";
+
+            if (score === 0) {
+                recText = "축하한다! 언제든지 가볍게 밖으로 뛰어나갈 준비가 끝난 '알잘딱 행동력 100%'의 스마트 모험가다. 성수동 2호선에 타기만 하면 된다! 우리가 정리한 올영 랠리와 농협 클로버 키링 코스를 즉시 영리하게 밟아보자.";
+            } else if (score <= 50) {
+                recText = "주말에 가끔 이불에 밀착당하지만, 마음 한구석에는 늘 영리한 탈출을 바라는 '현실주의 실용 분석가'다. 왕복 3시간 지하철 안에서 밀린 작업을 처리하고 생산성을 챙겨보자. 성수에 발을 내딛는 4시 즈음에 기분 좋은 갓생 도파민이 솟구친다!";
+            } else {
+                recText = "위험! 침대와 완벽 결합된 '솜이불 요정' 상태다. 아침 일찍 일어나는 고단한 오픈런은 과감히 영구 취소해 버리자! 대신 주말 오후 4시, 덥고 목마른 여름 날씨에 딱 시원하게 채워줄 오프뷰티 얼박사 제로 음료와 롬앤 공병 리사이클, 그리고 타건 소리가 짱 좋은 클로버 키캡 득템을 실속 타겟 삼아 가볍게 1만 보를 순환하는 '오후 알잘딱 루트'를 적극 권장한다. 주말의 상쾌함이 180도 바뀐다!";
+            }
+
+            document.getElementById('recommendation-text').textContent = recText;
+            document.getElementById('quiz-block').classList.add('hidden');
+            document.getElementById('quiz-result').classList.remove('hidden');
+        }
+
+        // Reset Quiz Block State
+        function resetQuiz() {
+            let checkboxes = document.querySelectorAll('.quiz-checkbox');
+            checkboxes.forEach(cb => cb.checked = false);
+            
+            document.getElementById('quiz-block').classList.remove('hidden');
+            document.getElementById('quiz-result').classList.add('hidden');
+        }
+
+        // Fallback copy
+        function copySharingLink() {
+            const url = window.location.href;
+            const textarea = document.createElement('textarea');
+            textarea.value = url;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showToast("스토리 공유 링크가 복사되었습니다! 침대 속 친구에게 유쾌한 탈출 에너지를 선물해 주세요. 🔗");
+            } catch (err) {
+                showToast("링크 복사에 실패했습니다. 브라우저 주소창 주소를 직접 공유해 보세요.");
+            }
+            document.body.removeChild(textarea);
+        }
+    </script>
+</body>
+</html>
